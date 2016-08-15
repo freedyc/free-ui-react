@@ -1,0 +1,12 @@
+*_bak
+*.log
+*.pid
+*.gem
+*.pyc
+*.swp
+*.db
+*.DS_Store
+/.sass-cache/
+/bower_components
+/node_modules
+\.*.un~
