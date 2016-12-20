@@ -1,0 +1,12 @@
+/usr/local/bin/ruby -r ./siteconf20161220-5108-aqazh4.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling rubymain.cpp
+compiling mapper.cpp
+linking shared-object fastfilereaderext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20161220-5108-1maq8yh

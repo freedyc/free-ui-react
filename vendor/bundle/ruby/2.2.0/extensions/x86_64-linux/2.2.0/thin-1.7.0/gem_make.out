@@ -1,0 +1,21 @@
+/usr/local/bin/ruby -r ./siteconf20161220-5108-m4i98b.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling parser.c
+compiling thin.c
+thin.c: 在函数‘Thin_HttpParser_alloc’中:
+thin.c:242: 警告：隐式声明函数‘thin_http_parser_init’
+thin.c: 在函数‘Thin_HttpParser_finish’中:
+thin.c:294: 警告：隐式声明函数‘thin_http_parser_finish’
+thin.c:296: 警告：隐式声明函数‘thin_http_parser_is_finished’
+thin.c: 在函数‘Thin_HttpParser_execute’中:
+thin.c:334: 警告：隐式声明函数‘thin_http_parser_execute’
+thin.c:338: 警告：隐式声明函数‘thin_http_parser_has_error’
+linking shared-object thin_parser.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 thin_parser.so ./.gem.20161220-5108-1x5osii
