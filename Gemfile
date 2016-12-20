@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-# gem "rails"
+gem "bundler"
 gem "thin"
 gem "rack"
 gem "sinatra"
