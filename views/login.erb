@@ -1,6 +1,41 @@
-<form>
-    <div>
-        <label>Username</label>
-        <input type="text" name="username" />
-    </div>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<div class="header"></div>
+<div class="main">
+	<div class="login">
+		<form action="/domain_list" method="get" id="myForm">
+			<div>
+				<label for="username">账户:</label>
+				<input id="username" type="text" name="username" />
+				<span class="msg">*</span>
+			</div>
+			<div>
+				<label for="passwd">密码:</label>
+				<input id="passwd" type="password" name="password" />
+				<span class="msg">*</span>
+			</div>
+			 <div class="tip"></div>
+			<div class="btn">
+				<input type="submit" id="submit" name="" value="提交" />
+			</div>	
+		</form>
+	</div>
+</div>
+<div class="footer"></div>
+<script src="js/jquery.js"></script>
+<script>
+	$('#myForm').on('submit',function(e){
+		var regUser = /^[a-zA-Z0-9]\w{3,15}$/;
+		if(!regUser.test($('#username').val())){
+			$('.tip').show().html('请输入合法的用户名')
+			return false
+		}
+	})
+</script>	
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+.main {
+	margin: 0 auto;
+	padding:10px;
+	background: #eee;
+	width: 1120px;
+	min-height: 500px;
+}
+.main .content {
+	position: relative;
+	background: #fff url(../img/search_bg.png) no-repeat right bottom;
+	min-height: 500px;
+	padding: 5px 10px;
+}
+.search {
+	position: absolute;
+	left: 50%;
+	top: 27px;
+	margin-left: -285px;
+	min-width: 570px;
+}
+.search:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.search .search_btn {
+	margin-top: 10px;
+	margin-left: 26px;
+	height: 32px;
+	width: 98px;
+	line-height: 32px;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+	background:url(../img/search_btn_bg.png) no-repeat;
+}
+.search .box{
+	position: relative;
+	background: #e9eaeb;
+	padding: 8px 10px;
+}
+.search .box:after{
+	content: '';
+	display: block;
+	clear: both;
+	font-size:0;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.search .box input.box-txt{
+	padding-left: 5px;
+	border: #d8d8d8 1px solid;
+	width: 300px;
+	height: 30px;
+}
+.search .box div.box-sel{
+	margin-left: 15px;
+	background: #FFF url('../img/search_st.png') no-repeat 97% center;
+	border: 1px solid #d8d8d8;
+	min-width: 62px;
+	line-height: 30px;
+	padding-left: 5px;
+	padding-right: 35px;
+	height: 30px;
+
+}
+.search div.box-list{
+	position: absolute;
+	right: 10px;
+	top: 40px;
+	display: none;
+	background: #fff;
+	overflow: auto;
+	min-height: 180px;
+	max-height: 200px;
+	width: 103px;
+}
+.search div.box-list ul li{
+	line-height: 26px;
+	height: 26px;
+	margin-top: 4px;
+	padding-left: 5px;
+	width: 80px;
+	cursor: pointer;
+
+}
+.search div.box-list ul li:hover{
+	background: #134874;
+	cursor: auto;
+	color: #fff;
+}
+
+.row:hover{
+	background: #fbf9f7;
+}
+ul li.col-1{
+	width: 35%;
+	text-align: left;
+	margin-left: 5%;
+}
+ul li.col-2{
+	width: 25%;
+	text-align: left;
+}
+ul li.col-3{
+	width: 30%;
+}
+
+/*record list*/
+
+.record_list{
+	margin: 110px auto 0;
+	height: 500px;
+	width: 90%;
+/*	background: #fff;*/
+	border-top: 1px solid #d7d7d7;
+}
+ul li.col-3 span{
+	padding: 2px 16px;
+	margin-right: 20px;
+	border: 1px solid #00a2ca;
+	border-radius: 3px;
+	height: 20px;
+	cursor: pointer;
+	color: #00a2ca;
+	text-align: center;
+}

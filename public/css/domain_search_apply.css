@@ -1,0 +1,95 @@
+
+.main {
+	margin: 0 auto;
+	padding:10px;
+	background: #eee;
+	width: 1120px;
+	min-height: 500px;
+}
+.main .content {
+	position: relative;
+	background: #fff;
+	min-height: 500px;
+	padding: 5px 10px;
+}
+
+.apply{
+	width: 950px;
+	margin: 35px auto 40px;
+}
+.apply .a_d{
+	line-height: 20px;
+	height: 20px;
+}
+.apply .a_d span{
+	display: inline-block;
+}
+.apply .add_btn{
+	width: 20px;
+	height: 20px;
+	background: url(../img/add_list.png);
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+}
+.apply .a_d_l{
+	margin-top: 15px;
+	margin-left: 45px;
+	background:#e9eaeb;
+	padding: 9px 16px;
+	color: #333333;
+}
+.apply .a_d_l input{
+	margin-left: 7px;
+	margin-right: 14px;
+	height: 24px;
+	line-height: 24px;
+	width: 155px;
+	border: 1px solid #dadada;
+}
+.apply .a_d_l li{
+	margin-bottom: 7px;
+}
+.apply .a_d_l select{
+	display: inline-block;
+	margin-left: 7px;
+	margin-right: 14px;
+	height: 28px;
+	line-height: 28px;
+	width: 97px;
+	border: 1px solid #dadada;
+}
+.apply .a_d_l .del_l_btn{
+	display: inline-block;
+	float: right;
+	margin-right: 20px;
+	background: url(../img/del_list.png) no-repeat center center;
+	width:16px;
+	height: 28px;
+}
+.apply .comment{
+	margin-top: 10px;
+}
+.apply .comment span{
+	float: left;
+	display: inline-block;
+	width: 40px;
+}
+.apply .comment textarea{
+	margin-left: 4px;
+	height: 150px;
+	width: 899px;
+	resize: none;
+}
+.apply .sub_btn input{
+	border: none;
+	background: url(../img/search_btn_bg.png) no-repeat;
+	width: 98px;
+	height: 32px;
+	color: #fff;
+	float: right;
+
+}
+.copy{
+	display: none;
+}

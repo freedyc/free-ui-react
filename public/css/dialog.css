@@ -1,0 +1,86 @@
+/*dialog*/
+.dialog{
+	position: absolute;
+	z-index: 99;
+	top: 0;
+	display: none;
+	border: 1px solid #ccc;
+	min-width: 400px;
+	box-shadow: -3px -2px 27px -4px #888
+}
+.dialog .dia_tit{
+	background: #284061;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	color: #fff;
+}
+.dialog .dia_btn{
+	overflow: hidden;
+	padding-bottom: 15px;
+	background: #fff;
+}
+.dialog .dia_btn button{
+	width: 60px;
+	height: 30px;
+	background: #4a90d6;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	color: #fff;
+	float: right;
+	margin-right: 10px;
+}
+.dialog .dia_content{
+	padding: 25px 30px;
+	background: #fff;
+}
+.dialog .dia_content label{
+	display: inline-block;
+	float: left;
+	min-width: 80px;
+	text-align: right;
+	padding-right: 10px;
+}
+.dialog .dia_content input[type="text"]{
+	width: 250px;
+	height: 25px;
+	border: 1px solid #d7d7d7;
+}
+.dialog .dia_content textarea{
+	display: inline-block;
+	resize: none;
+	width: 250px;
+	height: 75px;
+	border: 1px solid #d7d7d7;
+}
+.dialog .dia_content .r_l{
+	text-align: left;
+	width: 60px;
+	min-width: 60px;
+}
+.dialog .dia_content div{
+	margin-top: 10px;
+}
+
+.dialog .dia_content .info{
+	min-height: 50px;
+	margin: 10px 25px;
+	padding-left:60px;
+	line-height: 50px;
+	background: url(../img/info.png) no-repeat;
+}
+/*delete dialog*/
+.dialog .info_tip{
+	overflow: hidden;
+	line-height: 30px;
+
+}
+.dialog .info_tip .info_tip_tit{
+	float: left;
+	clear: left;
+	margin: 0 10px 0 0;
+	line-height: 30px;
+}
+.dialog .info_tip ul{
+	float: left;
+}

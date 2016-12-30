@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/domain_search_apply.css">
+</head>
+<body>
+<div class="header">
+	<div class="user_info">
+		欢迎 <span class="name">admin</span>
+	</div>
+	<div class="fix">
+		<div class="fix_pwd"><a href="#">修改密码</a></div>
+		<div class="fix_register"><a href="#">注销登录</a></div>
+	</div>
+</div>
+<div class="content">
+	<div class="breadcrumb">
+		<div class='bread'>
+			<div class="bread_icon"></div>
+			<span><a href="/domain_search">域名申请</a></span>
+			<span> >> </span>
+			<span><a href="/domain_search_apply">申请</a></span>
+		</div>
+	</div>
+	<div class="menus">
+		<ul>
+			<li><a href="/domain_list">域名管理</a></li>
+			<li><a href="/domain_search" class="active">域名申请</a></li>
+			<li><a href="/register_log">申请信息</a></li>
+			<li class="rline"><a href="/system_log">日志信息</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="content">
+			<div class="apply">
+				<div class="a_d">
+					<span>域名：</span>
+					<span clsss="a_d_n">zdns.cn</span>
+					<div class="add_btn"></div>
+				</div>
+				<form action="#">
+					<div class="a_d_l">
+						<ul>
+							<li>
+								<label for="">生效线路:</label><input type="text">
+								<label for="">类型:</label>
+								<select name="" id="">
+									<option value="">A</option>
+									<option value="">prt</option>
+								</select>
+								<label for="">TTL:</label><input type="text">
+								<label for="">记录值:</label><input type="text">
+								<span class="del_l_btn"></span>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="comment">
+						<span>备注:</span>
+						<textarea name="" id="" cols="120" rows="10"></textarea>
+					</div>
+					<div class="sub_btn"><input type="submit"/></div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer"></div>	
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//login
+	$('.user_info').click(function(){
+		$('.fix').slideToggle(100)
+	})
+	$('.fix').mouseover(function(){
+		$(this).show();
+	})
+	$('.fix').mouseout(function(){
+		$(this).hide();
+	})
+//add domain list
+	$('.add_btn').click(function(){
+		$('.a_d_l ul').append('<li>								<label for="">生效线路:</label><input type="text">								<label for="">类型:</label>								<select name="" id="">									<option value="">A</option>									<option value="">prt</option>								</select>								<label for="">TTL:</label><input type="text">								<label for="">记录值:</label><input type="text">								<span class="del_l_btn"></span>							</li>')
+		$('.del_l_btn').click(function(){
+			$(this).parent().remove();
+		})
+	})
+	$('.del_l_btn').click(function(){
+		$(this).parent().remove();
+	})
+
+</script>
+</html>

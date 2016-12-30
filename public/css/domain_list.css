@@ -1,0 +1,15 @@
+ul li.col-1{
+	width: 50px;
+}
+ul li.col-2{
+	width: 200px;
+	text-align: left;
+}
+.row ul li.col-2{
+	width: 180px;
+	padding-left: 20px;
+	text-align: left;
+}
+.row ul li.col-2 a:hover{
+	text-decoration: underline;
+}

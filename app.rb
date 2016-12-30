@@ -38,14 +38,16 @@ class App < Sinatra::Base
         erb :domain_list
     end
 
-    get "/domain_list/:domain_name/domain_records" do
+    get "/domain_records" do
         erb :domain_records
     end
 
     get "/domain_search" do
         erb :domain_search
     end
-
+    get "/domain_search_apply" do
+        erb :domain_search_apply
+    end
     get "/domain_search/:domain/domain_sign_up" do
         erb :domain_sign_up
     end

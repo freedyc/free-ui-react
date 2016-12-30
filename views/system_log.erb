@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/system_log.css">
+	<link rel="stylesheet" type="text/css" href="css/dialog.css">
+
+</head>
+<body>
+<div class="header">
+	<div class="user_info">
+		欢迎 <span class="name">admin</span>
+	</div>
+	<div class="fix">
+		<div class="fix_pwd"><a href="#">修改密码</a></div>
+		<div class="fix_register"><a href="#">注销登录</a></div>
+	</div>
+</div>
+<div class="content">
+	<div class="breadcrumb">
+		<div class='bread'>
+			<div class="bread_icon"></div>
+			<span>日志信息</span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<div class="menus">
+		<ul>
+			<li><a href="/domain_list">域名管理</a></li>
+			<li><a href="/domain_search">域名申请</a></li>
+			<li><a href="/register_log">申请信息</a></li>
+			<li class="rline"><a href="/system_log"  class="active">日志信息</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="toolbar">
+			<div class="export_btn">导出</div>
+			<div class="clean_btn">清除</div>
+		</div>
+		<div class="list">
+			<dl>
+				<dt class="th">
+					<ul>
+						<li class="col-1"><input type="checkbox"></li>
+						<li class="col-2">时间</li>
+						<li class="col-3">用户</li>
+						<li class="col-4">信息</li>
+					</ul>
+				</dt>
+				<dd class="row">
+					<ul>
+						<li class="col-1"><input type="checkbox"></li>
+						<li class="col-2">2016-12-21 16:30:09</li>
+						<li class="col-3">admin</li>
+						<li class="col-4">教育 3000 A200</li>
+					</ul>
+				</dd>
+				<dd class="row">
+					<ul>
+						<li class="col-1"><input type="checkbox"></li>
+						<li class="col-2">2016-12-21 16:30:09</li>
+						<li class="col-3">admin</li>
+						<li class="col-4">教育 3000 A200</li>
+					</ul>
+				</dd>
+				<dd class="row">
+					<ul>
+						<li class="col-1"><input type="checkbox"></li>
+						<li class="col-2">2016-12-21 16:30:09</li>
+						<li class="col-3">admin</li>
+						<li class="col-4">教育 3000 A200</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<div>
+			<ul class="page">
+			    <li><a href="#">&laquo;</a></li>
+			    <li class="active"><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li><a href="#">&raquo;</a></li>
+			 </ul>
+		</div>
+	</div>
+</div>
+<div class="dialog export">
+	<div class="dia_tit">信息</div>
+	<div class="dia_content">
+		<div class="info">
+			<div class="info_tip">
+				<div class="info_tip_tit">确定要导出日志吗？</div> 
+			</div> 
+		</div>
+	</div>
+	<div class="dia_btn">
+		<button type="button" class="cancel">取消</button>
+		<button type="button" class="ok">确定</button>
+	</div>
+</div>
+<div class="dialog clean">
+	<div class="dia_tit">信息</div>
+	<div class="dia_content">
+		<div class="info">
+			<div class="info_tip">
+				<div class="info_tip_tit">确定要导出日志吗？</div> 
+			</div> 
+		</div>
+	</div>
+	<div class="dia_btn">
+		<button type="button" class="cancel">取消</button>
+		<button type="button" class="ok">确定</button>
+	</div>
+</div>
+<div class="footer"></div>	
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$('.user_info').click(function(){
+		$('.fix').slideToggle(100)
+	})
+	$('.fix').mouseover(function(){
+		$(this).show();
+	})
+	$('.fix').mouseout(function(){
+		$(this).hide();
+	})
+
+// dialog
+	$('.export_btn').click(function(){
+		$('.export').show().css({
+			left: '50%',
+			'margin-left': -$('.export').width()/2+'px',
+			'margin-top': ($(window).height()-$('.export').height())/2+'px'
+
+		})
+	})
+	$('.clean_btn').click(function(){
+		$('.clean').show().css({
+			left: '50%',
+			'margin-left': -$('.clean').width()/2+'px',
+			'margin-top': ($(window).height()-$('.clean').height())/2+'px'
+
+		})
+	})
+ 
+	function hideDialog(){
+		$('.dialog').hide()
+	}
+	$('.ok').click(function(){
+		hideDialog()
+	})
+	$('.cancel').click(function(){
+		hideDialog()
+	})
+</script>
+</html>

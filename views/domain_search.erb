@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/domain_search.css">
+</head>
+<body>
+<div class="header">
+	<div class="user_info">
+		欢迎 <span class="name">admin</span>
+	</div>
+	<div class="fix">
+		<div class="fix_pwd"><a href="#">修改密码</a></div>
+		<div class="fix_register"><a href="#">注销登录</a></div>
+	</div>
+</div>
+<div class="content">
+	<div class="breadcrumb">
+		<div class='bread'>
+			<div class="bread_icon"></div>
+			<span>域名申请</span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<div class="menus">
+		<ul>
+			<li><a href="domain_list">域名管理</a></li>
+			<li><a href="domain_search" class="active">域名申请</a></li>
+			<li><a href="register_log">申请信息</a></li>
+			<li class="rline"><a href="/system_log">日志信息</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="content">
+			<div class="search">
+				<div class="box fl">
+					<input class="box-txt fl" type="text">
+					<div class="box-sel fl">.com</div>
+					<div class="box-list">
+						<ul>
+							<li>.com</li>
+							<li>.cn</li>
+							<li>.网址</li>
+							<li>.中心</li>
+							<li>.ren</li>
+						</ul>
+					</div>
+				</div>	
+				<div class="search_btn fr">查询</div>
+			</div>
+			<div class="record_list">
+				<dl>
+					<dt class="th">
+						<ul>
+							<li class="col-1">域名名称</li>
+							<li class="col-2">状态</li>
+							<li class="col-3">操作</li>
+						</ul>
+					</dt>
+					<dd class="row">
+						<ul>
+							<li class="col-1">clond.zdns.cn</li>
+							<li class="col-2">3600</li>
+							<li class="col-3">
+								<span class="applyName"><a href="/domain_search_apply">申请域名</a></span>
+								<span class="applyDomain"><a href="">申请域</a></span>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer"></div>	
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//login
+	$('.user_info').click(function(){
+		$('.fix').slideToggle(100)
+	})
+	$('.fix').mouseover(function(){
+		$(this).show();
+	})
+	$('.fix').mouseout(function(){
+		$(this).hide();
+	})
+
+//search 
+	$('.box-sel').click(function(e){
+		e.stopPropagation();
+		$('.box-list').slideDown();
+	})
+	$('.box-list ul li').click(function(e){
+		$('.box-sel').html($(e.target).html());
+	})
+	$('.content').click(function(){
+		$('.box-list').hide();
+	})
+</script>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/domain_records.css">
+	<link rel="stylesheet" type="text/css" href="css/dialog.css">
+</head>
+<body>
+<div class="header">
+	<div class="user_info">
+		欢迎 <span class="name">admin</span>
+	</div>
+	<div class="fix">
+		<div class="fix_pwd"><a href="#">修改密码</a></div>
+		<div class="fix_register"><a href="#">注销登录</a></div>
+	</div>
+</div>
+<div class="content">
+	<div class="breadcrumb">
+		<div class='bread'>
+			<div class="bread_icon"></div>
+			<span><a href="/domain_list">域名管理</a></span>
+			<span> &gt&gt </span>
+			<span>记录</span>
+		</div>
+	</div>
+	<div class="menus">
+		<ul>
+			<li><a href="/domain_list" class="active">域名管理</a></li>
+			<li><a href="/domain_search">域名申请</a></li>
+			<li><a href="/register_log">申请信息</a></li>
+			<li class="rline"><a href="/system_log">日志信息</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<div class="toolbar">
+			<div class="create_btn">添加</div>
+			<div class="edit_btn">编辑</div>
+			<div class="del_btn">删除</div>				
+		</div>
+		<!-- table content -->
+		<div class="list">
+			<dl>
+				<dt class="th">
+					<ul>
+						<li class="col-1"><input type="checkbox"></li>
+						<li class="col-2">记录名称</li>
+						<li class="col-3">TTL</li>
+						<li class="col-4">记录类型</li>
+						<li class="col-5">记录值</li>
+						<li class="col-6">是否启用</li>
+					</ul>
+				</dt>
+				<dd class="row">
+					<ul>
+						<li class="col-1"><input type="checkbox"></li>
+						<li class="col-2">clond.zdns.cn</li>
+						<li class="col-3">3600</li>
+						<li class="col-4">A</li>
+						<li class="col-5">2.2.2.2</li>
+						<li class="col-6">是</li>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<!-- table content -->
+		<div>
+			<ul class="page">
+			    <li><a href="#">&laquo;</a></li>
+			    <li class="active"><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li><a href="#">&raquo;</a></li>
+			 </ul>
+		</div>
+	</div>
+</div>
+<div class="dialog edit">
+	<div class="dia_tit">新建记录</div>
+	<div class="dia_content">
+		<form action="#" id="myForm">
+			<div>
+				<label for="">记录名称</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">生效链路</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">类型</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">TTL</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">记录值</label>
+				<textarea name=""></textarea>
+			</div>
+			<div>
+				<label for="">是否启用</label>
+				<label for="" class="r_l"><input type="radio" name="enable">是 </label>
+				<label for="" class="r_l"><input type="radio" name="enable">否</label>
+			</div>
+
+		</form>
+	</div>
+	<div class="dia_btn">
+		<button type="button" class="cancel">取消</button>
+		<button type="button" class="ok">确定</button>
+	</div>
+</div>	
+
+<div class="dialog create">
+	<div class="dia_tit">新建记录</div>
+	<div class="dia_content">
+		<form action="#" id="myForm">
+			<div>
+				<label for="">记录名称</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">生效链路</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">类型</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">TTL</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">记录值</label>
+				<textarea name=""></textarea>
+			</div>
+			<div>
+				<label for="">是否启用</label>
+				<label for="" class="r_l"><input type="radio" name="enable">是 </label>
+				<label for="" class="r_l"><input type="radio" name="enable">否</label>
+			</div>
+
+		</form>
+	</div>
+	<div class="dia_btn">
+		<button type="button" class="cancel">取消</button>
+		<button type="button" class="ok">确定</button>
+	</div>
+</div>	
+<div class="dialog del_info">
+	<div class="dia_tit">信息</div>
+	<div class="dia_content">
+		<div class="info">
+			<div class="info_tip">
+				<div class="info_tip_tit">确定要域名删除:</div> 
+				<ul>
+					<li>baidu.com</li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	<div class="dia_btn">
+		<button type="button" class="cancel">取消</button>
+		<button type="button" class="ok">确定</button>
+	</div>
+</div>
+<div class="footer"></div>	
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$('.user_info').click(function(){
+		$('.fix').slideToggle(100)
+	})
+	$('.fix').mouseover(function(){
+		$(this).show();
+	})
+	$('.fix').mouseout(function(){
+		$(this).hide();
+	})
+
+//dialog
+	$('.create_btn').click(function(){
+		$('.create').show().css({
+			left: '50%',
+			'margin-left': -$('.create').width()/2+'px',
+			'margin-top': ($(window).height()-$('.create').height())/2+'px'
+
+		})
+	})
+	$('.del_btn').click(function(){
+		$('.del_info').show().css({
+			left: '50%',
+			'margin-left': -$('.del_info').width()/2+'px',
+			'margin-top': ($(window).height()-$('.del_info').height())/2+'px'
+
+		})
+		
+	})
+	$('.edit_btn').click(function(){
+		$('.edit').show().css({
+			left: '50%',
+			'margin-left': -$('.edit').width()/2+'px',
+			'margin-top': ($(window).height()-$('.edit').height())/2+'px'
+
+		})
+	})
+ 
+	function hideDialog(){
+		$('.dialog').hide()
+	}
+	$('.ok').click(function(){
+		hideDialog()
+	})
+	$('.cancel').click(function(){
+		hideDialog()
+	})
+</script>
+</html>
