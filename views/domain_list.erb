@@ -36,10 +36,7 @@
 	</div>
 	<div class="main">
 		<div class="toolbar">
-			 
-		</div>
-		<div id="toolbar">
-			 
+			 <div class="del_btn">删除</div>
 		</div>
 		<div class="list">
 			<dl>
@@ -73,7 +70,7 @@
 						<li class="col-6">2016-12-21 16:30:09</li>
 					</ul>
 				</dd>
-								<dd class="row">
+				<dd class="row">
 					<ul>
 						<li class="col-1"><input type="checkbox"></li>
 						<li class="col-2"><a href="">clond.zdns.cn</a></li>
@@ -198,9 +195,7 @@
 		</div>
 	</div>
 </div>
-<div id="Dialog">
-</div>
-<!-- <div class="dialog del_info">
+<div class="dialog del_info">
 	<div class="dia_tit">信息</div>
 	<div class="dia_content">
 		<div class="info">
@@ -217,54 +212,10 @@
 		<button type="button" class="cancel">取消</button>
 		<button type="button" class="ok">确定</button>
 	</div>
-</div> -->
+</div>
 <div class="footer"></div>	
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/react.js"></script>
-<script type="text/javascript" src="js/react-dom.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
-<script type="text/babel">
-	var DeleteBtn = React.createClass({
-		handleClick: function(){
-			$('.del_info').show().css({
-				left: '50%',
-				'margin-left': -$('.del_info').width()/2+'px',
-				'margin-top': ($(window).height()-$('.del_info').height())/2+'px'
-
-			})
-			ReactDOM.render(<Delete  name="ccc"/>, document.getElementById('Dialog'))
-		},
-		render: function(){
-			return (<div className="del_btn" onClick={this.handleClick}>删除</div>)
-		}
-	})
-	var Delete = React.createClass({
-		render: function(){
-			return (
-			<div className="dialog del_info">
-				<div className="dia_tit">信息</div>
-				<div className="dia_content">
-					<div className="info">
-						<div className="info_tit">删除域或域名会联动删除记录值</div>
-						<div className="info_tip">
-							<div className="info_tip_tit">确定要删除:</div> 
-							<ul>
-								<li>baidu.com</li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div className="dia_btn">
-					<button type="button" className="cancel">取消</button>
-					<button type="button" className="ok">确定</button>
-				</div>
-			</div>				
-			)
-		}
-	})
-	ReactDOM.render(<DeleteBtn />, $('.toolbar').get(0))
-</script>
 <script type="text/javascript"> 
 	$('.user_info').click(function(){
 		$('.fix').slideToggle(100)
