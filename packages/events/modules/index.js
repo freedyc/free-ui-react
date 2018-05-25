@@ -11,6 +11,7 @@ export default class Events {
     let evt = new Events(obj);
     obj.on = (...args) => evt.on(...args);
     obj.off = (...args) => evt.off(...args);
+    obj.trigger = (...args) => evt.trigger(...args);
     return obj;
   }
 
@@ -21,12 +22,13 @@ export default class Events {
 
   on(name, callback, context) {
     if (callback) {
-      let hanlders = this.events[name] || [];
+      let handlers = this.events[name] || [];
       handlers.push({
         callback,
         context,
         ctx: context || this.ctx,
       });
+      this.events[name] = handlers;
     }
     return this.ctx;
   };
@@ -40,14 +42,14 @@ export default class Events {
     const keys = Object.keys(this.events);
     if (keys.length === 0) return this.ctx;
     this.events = keys.reduce((newEvents, eventName) => {
-      const hanlders = this.newEvents[eventName].reduce((newHanlders, handler) => {
+      const handlers = this.events[eventName].reduce((newHanlders, handler) => {
         if ((name == null || name === eventName) && (handler.context === context || context == null) && (handler.callback === callback || callback == null)) {
           return newHanlders;
         }
         newHanlders.push(handler);
         return newHanlders;
       }, []);
-      if (hanlders.length > 0) newEvents[name] = hanlders;
+      if (handlers.length > 0) newEvents[name] = handlers;
       return newEvents;
     }, {});
 
