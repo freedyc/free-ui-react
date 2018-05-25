@@ -1,7 +1,7 @@
 {
-  "name": "event",
+  "name": "events",
   "version": "0.1.0",
-  "description": "This provide Event object",
+  "description": "Provide Events object",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
   "authors": [
