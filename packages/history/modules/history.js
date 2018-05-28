@@ -2,7 +2,7 @@
  * History class
  */
 
-import Events from 'events';
+import Events from '@gsmlg/events';
 
 const PUSH_MODE = 'popState';
 const HASH_MODE = 'hashChange';
