@@ -21,7 +21,7 @@
     "prepublishOnly": "node ./tools/build.js",
     "clean": "git clean -fdX .",
     "lint": "eslint modules",
-    "test": "jest"
+    "test": "karma start --single-run"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

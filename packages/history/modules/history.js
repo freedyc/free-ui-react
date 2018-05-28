@@ -93,11 +93,13 @@ export default class History {
       }
       case MEMO_MODE: {
         this.on('memoryPush', (location) => {
-          this.trigger('popState', {
-            prev: lastLocation,
-            current: location,
+          setTimeout(() => {
+            this.trigger('popState', {
+              prev: lastLocation,
+              current: location,
+            });
+            lastLocation = location;
           });
-          lastLocation = location;
         });
         break;
       }

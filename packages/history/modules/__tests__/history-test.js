@@ -17,15 +17,16 @@ describe('Events test', () => {
       spy = mock.fn();
     });
 
-    it("should start", () => {
+    it("should start", (done) => {
       history.start();
-      history.on('popState', spy);
+      history.on('popState', (...args) => {
+        spy(...args);
+        expect(spy).toHaveBeenCalled();
+        done();
+      });
       const href = '/test-space';
       history.push(href);
-
-      expect(spy).toHaveBeenCalled();
     });
-
   });
 
   describe('hashChange history', () => {
@@ -38,7 +39,6 @@ describe('Events test', () => {
     it("should start", (done) => {
       history.start();
       history.on('popState', (...args) => {
-        console.log('hash: ' + args);
         spy(...args);
         expect(spy).toHaveBeenCalled();
         done();
@@ -58,7 +58,6 @@ describe('Events test', () => {
     it("should start", (done) => {
       history.start();
       history.on('popState', (...args) => {
-        console.log('pop: ' + args);
         spy(...args);
         expect(spy).toHaveBeenCalled();
         done();
@@ -66,9 +65,5 @@ describe('Events test', () => {
       const href = '/test-space';
       history.push(href);
     });
-
   });
-
-
-
 });
