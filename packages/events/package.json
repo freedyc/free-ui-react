@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/events",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Provide Events object",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -56,6 +56,9 @@
     "setupFiles": [
       "raf/polyfill"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": []
 }

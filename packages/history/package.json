@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/history",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "history, change with browser history",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "rollup-plugin-uglify": "^3.0.0"
   },
   "dependencies": {
-    "@gsmlg/events": "^0.0.1"
+    "@gsmlg/events": "^0.1.0"
   },
   "browserify": {
     "transform": [
@@ -59,6 +59,9 @@
     "setupFiles": [
       "raf/polyfill"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": []
 }
