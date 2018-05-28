@@ -59,6 +59,9 @@
       "raf/polyfill"
     ]
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
   ]
 }
