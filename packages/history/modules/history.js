@@ -41,6 +41,7 @@ export default class History {
       case PUSH_MODE: {
         const { history } = window;
         history.pushState.apply(history, current);
+        this.trigger('pushState', location);
         break;
       }
       case HASH_MODE: {
@@ -48,7 +49,7 @@ export default class History {
         break;
       }
       case MEMO_MODE: {
-        this.trigger('popState', location);
+        this.trigger('memoryPush', location);
         break;
       }
         // no default
@@ -56,26 +57,48 @@ export default class History {
   }
 
   pop(location) {
-
   }
 
   start() {
     if (this.isStarted) return;
     const { location } = window;
-    let lastLocation;
+    let lastLocation = location.href;
     switch(this.mode) {
       case PUSH_MODE: {
         window.onpopstate = (evt) => {
-          this.trigger('popState', lastLocation);
+          this.trigger('popState', {
+            prev: lastLocation,
+            current: location.href,
+          });
           lastLocation = location.href;
         };
+        this.on('pushState', (location) => {
+          this.trigger('popState', {
+            prev: lastLocation,
+            current: location,
+          });
+          lastLocation = location;
+        });
         break;
       }
       case HASH_MODE: {
         window.onhashchange = (evt) => {
-          this.trigger('popState', lastLocation);
+          this.trigger('popState', {
+            prev: lastLocation,
+            current: location.href,
+          });
           lastLocation = location.href;
         };
+        break;
+      }
+      case MEMO_MODE: {
+        this.on('memoryPush', (location) => {
+          this.trigger('popState', {
+            prev: lastLocation,
+            current: location,
+          });
+          lastLocation = location;
+        });
         break;
       }
         // no default
