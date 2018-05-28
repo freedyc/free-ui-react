@@ -62,8 +62,7 @@ export default class History {
   start() {
     if (this.isStarted) return;
     const { location } = window;
-    let lastLocation = location.href;
-    this.push(lastLocation);
+    let lastLocation;
     switch(this.mode) {
       case PUSH_MODE: {
         window.onpopstate = (evt) => {

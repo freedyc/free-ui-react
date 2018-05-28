@@ -5,14 +5,14 @@ describe('Events test', () => {
   let spy;
 
   beforeEach(() => {
-    history = new History();
+    history = new History({ mode: 'memory' });
     spy = jest.fn();
   });
 
   it("should start", () => {
     history.start();
     history.on('popState', spy);
-    let href = '/test-space';
+    const href = '/test-space';
     history.push(href);
 
     expect(spy).toHaveBeenCalled();
