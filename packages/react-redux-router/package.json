@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/react-redux-router",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "react redux router",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -22,8 +22,6 @@
     "clean": "git clean -fdX .",
     "lint": "eslint modules",
     "test": "jest"
-  },
-  "peerDependencies": {
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -62,6 +60,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [
-  ]
+  "keywords": []
 }
