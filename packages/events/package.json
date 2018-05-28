@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/events",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Provide Events object",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -22,8 +22,6 @@
     "clean": "git clean -fdX .",
     "lint": "eslint modules",
     "test": "jest"
-  },
-  "peerDependencies": {
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -59,6 +57,5 @@
       "raf/polyfill"
     ]
   },
-  "keywords": [
-  ]
+  "keywords": []
 }
