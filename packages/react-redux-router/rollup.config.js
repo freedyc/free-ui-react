@@ -12,6 +12,7 @@ const config = {
     }
   },
   external: [
+    'immutable',
   ],
   plugins: [
     babel({

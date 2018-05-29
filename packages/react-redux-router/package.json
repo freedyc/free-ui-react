@@ -8,8 +8,18 @@
     "gsmlg"
   ],
   "files": [
-    "es",
     "index.js",
+    "link.js",
+    "match_path.js",
+    "middleware.js",
+    "package.json",
+    "redirect.js",
+    "reducer.js",
+    "rollup.config.js",
+    "route.js",
+    "route_provider.js",
+    "switch.js",
+    "es",
     "umd"
   ],
   "main": "index.js",
@@ -40,6 +50,7 @@
     "jest": "^22.4.3",
     "pretty-bytes": "^4.0.2",
     "raf": "^3.4.0",
+    "react-test-renderer": "^16.4.0",
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-commonjs": "^9.1.0",
@@ -60,5 +71,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": []
+  "keywords": [],
+  "peerDependencies": {
+    "immutable": "^3.8.2",
+    "react": "0.14",
+    "redux": "3.1"
+  }
 }

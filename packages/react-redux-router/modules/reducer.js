@@ -1,8 +1,8 @@
-import { fromJS } from 'immutablejs';
+import Immutable from 'immutable';
 
 export const LOCATION_CHANGE = '@@react-redux-router/LOCATION_CHANGE';
 
-const initState = fromJS({
+const initState = Immutable.fromJS({
   location: null,
 });
 
