@@ -21,7 +21,13 @@ const matchPath = (pathname, options = {}, parent) => {
 
   const { path, exact = false } = options;
 
-  if (path == null) return parent;
+  if (path == null) return {
+    path, // the path pattern used to match
+    url: pathname, // the matched portion of the URL
+    isExact: true, // whether or not we matched exactly
+    params: {},
+    values: []
+  };
 
   const re = pathToRegExp(path, exact);
   const match = re.exec(pathname);
@@ -33,7 +39,7 @@ const matchPath = (pathname, options = {}, parent) => {
 
   if (exact && !isExact) return null;
 
-  const keys = [].slice.call(path.match(/(?:\*|:)\w+/g).map((p) => p.slice(1)));
+  const keys = [].slice.call((path.match(/(?:\*|:)\w+/g) || []).map((p) => p.slice(1)));
 
   return {
     path, // the path pattern used to match

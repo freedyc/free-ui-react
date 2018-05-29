@@ -1,16 +1,17 @@
-import Immutable from 'immutable';
-
 export const LOCATION_CHANGE = '@@react-redux-router/LOCATION_CHANGE';
 
-const initState = Immutable.fromJS({
+const initState = {
   location: null,
-});
+};
 
 export const routerReducer = (state = initState, { type, payload }) => {
   switch(type) {
 
     case LOCATION_CHANGE:
-      return state.set('location', payload.location);
+      return {
+        ...state,
+        location: payload.location,
+      };
 
     default:
       return state;

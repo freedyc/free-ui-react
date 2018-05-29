@@ -53,7 +53,7 @@ class Redirect extends React.Component {
     return to;
   }
 
-  perform() {
+  redirect() {
     const { push } = this.context.router;
     const to = this.computeTo(this.props);
     push(to);

@@ -21,10 +21,14 @@ class RouteProvider extends Component {
     return {
       router: {
         history: this.props.history,
-        location: this.props.history.getLocation(),
+        location: this.state.location,
         push: this.props.history.push,
       }
     };
+  }
+
+  state = {
+    location: this.props.history.getLocation()
   }
 
   handleLocationChange = (location) => {
@@ -34,6 +38,7 @@ class RouteProvider extends Component {
         location,
       }
     });
+    this.setState({ location });
   };
 
   componentWillMount() {
@@ -55,4 +60,4 @@ class RouteProvider extends Component {
   }
 }
 
-export default ConnectedRouter;
+export default RouteProvider;
