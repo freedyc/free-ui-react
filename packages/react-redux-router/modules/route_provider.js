@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component, PropTypes } from "react";
 
 import { LOCATION_CHANGE } from "./reducer";
 
@@ -7,12 +6,26 @@ class RouteProvider extends Component {
   static propTypes = {
     store: PropTypes.object,
     history: PropTypes.object.isRequired,
-    children: PropTypes.node,
+    children: PropTypes.node
   };
 
   static contextTypes = {
     store: PropTypes.object
   };
+
+  static childContextTypes = {
+    router: PropTypes.object.isRequired
+  };
+
+  getChildContext() {
+    return {
+      router: {
+        history: this.props.history,
+        location: this.props.history.getLocation(),
+        push: this.props.history.push,
+      }
+    };
+  }
 
   handleLocationChange = (location) => {
     this.store.dispatch({
@@ -29,7 +42,7 @@ class RouteProvider extends Component {
 
     this.unsubscribeFromHistory = history.subscribe(this.handleLocationChange);
 
-    this.handleLocationChange(history.location);
+    this.handleLocationChange(history.getLocation());
   }
 
   componentWillUnmount() {

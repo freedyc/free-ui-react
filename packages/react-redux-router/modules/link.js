@@ -1,24 +1,37 @@
 import React, { Component, PropTypes } from "react";
-import { NAMESPACE } from './constants';
+
+const isModifiedEvent = event =>
+  !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 
 export default class Link extends Component {
   static contextTypes = {
-    store: PropTypes.object,
-    routeTo: PropTypes.func,
+    router: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+      history: PropTypes.object.isRequired,
+      location: PropTypes.string.isRequired,
+    }).isRequired
   };
 
   static defaultProps = {
-    Component: React.DOM.a,
-    activeClass: 'active'
+    component: React.DOM.a,
+    activeClass: 'active',
+    exact: false,
   }
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    return this.context.store.getState().get(NAMESPACE) !== nextContext.store.getState().get(NAMESPACE);
+    return this.context.router.location !== nextContext.router.location;
   }
 
-  click = (evt) => {
-    evt.preventDefault();
-    this.context.routeTo(this.props.to);
+  handleClick = (evt) => {
+    if (this.props.onClick) this.props.onClick(evt);
+    if (
+      !evt.defaultPrevented && // onClick prevented default
+      evt.button === 0 && // ignore everything but left clicks
+      !isModifiedEvent(evt) // ignore clicks with modifier keys
+    ) {
+      evt.preventDefault();
+      this.context.router.push(this.props.to);
+    }
   }
 
   isActive() {
@@ -34,16 +47,15 @@ export default class Link extends Component {
 
   render() {
     const {
-      Component,
+      component,
       className,
       activeClass,
       ...rest,
     } = this.props;
-    return (
-      <Component
-        {...rest}
-        className={`${className} ${this.isActive() ? activeClass : ''}`}
-        onClick={this.click}
-      />);
+    return React.createElement(component, {
+      ...rest,
+      className: `${className} ${this.isActive() ? activeClass : ''}`,
+      onClick: this.handleClick,
+    });
   }
 }

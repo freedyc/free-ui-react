@@ -7,6 +7,7 @@ export const createHistory = () => {
       history.on('locationChange', callback, null);
       return () => history.off(null, callback);
     },
+    getLocation: () => history.location,
     push: (url) => {
       history.push(url);
     }
