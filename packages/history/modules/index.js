@@ -1,7 +1,21 @@
-import History from './history';
+import History, {
+  PUSH_MODE,
+  HASH_MODE,
+  MEMO_MODE,
+} from './history';
 
-export const createHistory = () => {
-  const history = new History();
+export {
+  PUSH_MODE,
+  HASH_MODE,
+  MEMO_MODE,
+};
+export const createHistory = (argMode) => {
+  let mode;
+  if ([PUSH_MODE, HASH_MODE, MEMO_MODE].includes(argMode)) {
+    mode = argMode;
+  }
+  const history = new History(mode ? { mode } : {});
+  history.start();
   return {
     subscribe: (callback) => {
       history.on('locationChange', callback, null);
