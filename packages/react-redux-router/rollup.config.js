@@ -12,6 +12,7 @@ const config = {
     }
   },
   external: [
+    'react',
     'immutable',
   ],
   plugins: [
