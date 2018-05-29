@@ -13,7 +13,7 @@ const rand = () => Math.random().toString(36).slice(2);
 const pathReg = /^(?:(?:http(?:s)?):\/\/(?:[^/]+))?\/(.*)/i;
 
 const getPath = (href) => {
-  const [url, path] = pathReg.exec(href);
+  const [ url, path ] = pathReg.exec(href);
   return '/' + (path ? path : href).replace(/^[#\/]+/, '');
 };
 
