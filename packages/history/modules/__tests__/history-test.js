@@ -19,9 +19,10 @@ describe('Events test', () => {
 
     it("should start", (done) => {
       history.start();
-      history.on('popState', (...args) => {
+      history.on('locationChange', (...args) => {
         spy(...args);
         expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(href);
         done();
       });
       const href = '/test-space';
@@ -38,9 +39,10 @@ describe('Events test', () => {
 
     it("should start", (done) => {
       history.start();
-      history.on('popState', (...args) => {
+      history.on('locationChange', (...args) => {
         spy(...args);
         expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(href);
         done();
       });
       const href = '/test-space';
@@ -57,9 +59,10 @@ describe('Events test', () => {
 
     it("should start", (done) => {
       history.start();
-      history.on('popState', (...args) => {
+      history.on('locationChange', (...args) => {
         spy(...args);
         expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith(href);
         done();
       });
       const href = '/test-space';

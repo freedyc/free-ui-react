@@ -4,7 +4,7 @@ export const createHistory = () => {
   const history = new History();
   return {
     subscribe: (callback) => {
-      history.on('popState', callback, null);
+      history.on('locationChange', callback, null);
       return () => history.off(null, callback);
     },
     push: (url) => {
