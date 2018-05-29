@@ -6,7 +6,7 @@ const initState = fromJS({
   location: null,
 });
 
-const routeReducer = (state = initState, { type, payload }) => {
+export const routerReducer = (state = initState, { type, payload }) => {
   switch(type) {
 
     case LOCATION_CHANGE:
@@ -17,4 +17,4 @@ const routeReducer = (state = initState, { type, payload }) => {
   }
 };
 
-export default routeReducer;
+export default routerReducer;
