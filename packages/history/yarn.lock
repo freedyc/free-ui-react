@@ -92,10 +92,6 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@gsmlg/events@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@gsmlg/events/-/events-0.1.0.tgz#3b490a90ece7e064e5fc7032504eec9a7280b684"
-
 "@types/estree@0.0.38":
   version "0.0.38"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.38.tgz#c1be40aa933723c608820a99a373a16d215a1ca2"
