@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/react-redux-router",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "react redux router",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@gsmlg/history": "*",
+    "@gsmlg/history": "^0.2.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
