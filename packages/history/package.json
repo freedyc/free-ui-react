@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/history",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "history, change with browser history",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
