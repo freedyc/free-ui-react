@@ -51,12 +51,13 @@ export default class Link extends Component {
       className,
       activeClass,
       exact,
+      children,
       ...rest,
     } = this.props;
     return React.createElement(component, {
       ...rest,
       className: `${className} ${this.isActive() ? activeClass : ''}`,
       onClick: this.handleClick,
-    });
+    }, children);
   }
 }
