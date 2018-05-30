@@ -50,6 +50,7 @@ export default class Link extends Component {
       component,
       className,
       activeClass,
+      exact,
       ...rest,
     } = this.props;
     return React.createElement(component, {
