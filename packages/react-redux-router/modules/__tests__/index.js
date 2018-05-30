@@ -7,17 +7,19 @@ import { createHistory, MEMO_MODE } from "@gsmlg/history";
 
 import RouteProvider from "../route_provider";
 import { LOCATION_CHANGE, routerReducer } from "../reducer";
-import routerMiddleware, { push } from "../middleware";
+import routerMiddleware, { push, CALL_HISTORY_METHOD } from "../middleware";
 
 describe("A <RouteProvider />", () => {
-  let store, history;
+  let store, history, reducerSpy;
 
   beforeEach(() => {
-    store = createStore(
-      combineReducers({router: routerReducer})
-    );
-
+    reducerSpy = jest.fn();
     history = createHistory(MEMO_MODE);
+    store = createStore(
+      combineReducers({router: routerReducer, spy: (st, act) => { reducerSpy(act); return {}; }}),
+      applyMiddleware(routerMiddleware(history))
+    );
+    push.setDispatch(store.dispatch);
   });
 
   it("connects to a store via Provider", () => {
@@ -73,4 +75,26 @@ describe("A <RouteProvider />", () => {
       done();
     }, 1000);
   });
+
+  it("updates the store with store.dispatch", (done) => {
+    const spy = jest.fn();
+    renderer.create(
+      <Provider store={store}>
+        <RouteProvider history={history}>
+          <div>Test</div>
+        </RouteProvider>
+      </Provider>
+    );
+    const pushAction = { type: CALL_HISTORY_METHOD, payload: { location: '/foo' } };
+    history.subscribe(spy);
+
+    (push("/foo"));
+
+    setTimeout(() => {
+      expect(spy).toHaveBeenCalled();
+      expect(store.getState()).toHaveProperty("router.location", "/foo");
+      done();
+    }, 1000);
+  });
+
 });

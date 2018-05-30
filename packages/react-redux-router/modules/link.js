@@ -35,8 +35,8 @@ export default class Link extends Component {
   }
 
   isActive() {
-    const router = this.context.store.getState().get(NAMESPACE);
-    const path = router.get('location');
+    const router = this.context.router;
+    const path = router.location;
     const { to, exact } = this.props;
     if (exact) {
       return to === path;
