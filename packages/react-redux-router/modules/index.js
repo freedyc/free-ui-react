@@ -4,7 +4,7 @@ import Redirect from './redirect';
 import Route from './route';
 import RouteProvider from './route_provider';
 import { routerReducer, LOCATION_CHANGE } from './reducer';
-import routerMiddleware, { push, setDispatch, CALL_HISTORY_METHOD } from './middleware';
+import routerMiddleware, { push, CALL_HISTORY_METHOD } from './middleware';
 
 export {
   Link,

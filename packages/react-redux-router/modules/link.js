@@ -13,7 +13,7 @@ export default class Link extends Component {
   };
 
   static defaultProps = {
-    component: React.DOM.a,
+    component: 'a',
     activeClass: 'active',
     exact: false,
   }
