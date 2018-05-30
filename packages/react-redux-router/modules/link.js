@@ -56,7 +56,7 @@ export default class Link extends Component {
     } = this.props;
     return React.createElement(component, {
       ...rest,
-      className: `${className} ${this.isActive() ? activeClass : ''}`,
+      className: `${className ? className : ''} ${this.isActive() ? activeClass : ''}`,
       onClick: this.handleClick,
     }, children);
   }
