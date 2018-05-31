@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -27,6 +27,40 @@
   to { transform: rotate(360deg); }
 }
 
-a.active {
-  color: red;
+.App-header ul li {
+  list-style: none;
+  display: inline-block;
+  width: 80px;
+}
+
+.App-header ul li.active {
+  color: white;
+  background-color: blue;
+}
+
+aside {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
+main {
+  display: inline-block;
+  width: 800px;
+  vertical-align: top;
+}
+
+ul.ul-v {
+  padding: 0;
+  text-align: center;
+  color: #333;
+  background-color: #ccc;
+}
+ul.ul-v li {
+  list-style: none;
+}
+ul.ul-v li.active {
+  color: #ccc;
+  background-color: #333;
+
 }
