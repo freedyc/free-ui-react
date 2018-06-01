@@ -3,7 +3,7 @@ const execSync = require('child_process').execSync
 const prettyBytes = require('pretty-bytes')
 const gzipSize = require('gzip-size')
 
-const filename = '<<NAME>>';
+const filename = '{{properCase name}}';
 
 const exec = (command, extraEnv) =>
   execSync(command, {

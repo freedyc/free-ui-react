@@ -7,7 +7,7 @@ import resolve from "rollup-plugin-node-resolve";
 const config = {
   input: "modules/index.js",
   output: {
-    name: "@gsmlg/<<NAME>>",
+    name: "{{properCase name}}",
     globals: {
     }
   },

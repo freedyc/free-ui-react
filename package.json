@@ -2,7 +2,11 @@
   "name": "@gsmlg/react-suit",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "generate": "plop --plopfile generators/index.js"
+  },
   "devDependencies": {
-    "lerna": "^2.11.0"
+    "lerna": "^2.11.0",
+    "plop": "^2.0.0"
   }
 }
