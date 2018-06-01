@@ -1,10 +1,10 @@
 {
   "name": "router-test",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "private": true,
   "dependencies": {
     "@gsmlg/history": "^0.2.1",
-    "@gsmlg/react-redux-router": "^0.2.6",
+    "@gsmlg/react-redux-router": "^0.2.7",
     "react": "15",
     "react-dom": "15",
     "react-redux": "^5.0.7",
