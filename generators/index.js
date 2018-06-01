@@ -33,7 +33,10 @@ const packageGenerator = {
       {
         type: 'addMany',
         destination: `${__dirname}/../packages/${path}/`,
-        templateFiles: `${data.test}/**/*`
+        templateFiles: `${data.test}/**/*`,
+        globOptions: {
+          dot: true
+        }
       }
     ];
 
