@@ -28,10 +28,12 @@ class Switch extends React.Component {
           exact,
           strict,
           sensitive,
+          disabled,
           from
         } = element.props;
         const path = pathProp || from;
 
+        if (disabled) return;
         child = element;
         match = matchPath(location, { path, exact });
       }

@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import { applyMiddleware, createStore, combineReducers, compose } from "redux";
 import { Provider } from "react-redux";
-import { createHistory, MEMO_MODE } from "@gsmlg/history";
+import { createHistory, MEMO_MODE, HASH_MODE } from "@gsmlg/history";
 
 import {
     routerMiddleware,
@@ -24,7 +24,7 @@ const composeEnhancers = typeof window === 'object' &&
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
 
-const history = createHistory();
+const history = createHistory(HASH_MODE);
 const store = createStore(
     combineReducers({router: routerReducer }),
     composeEnhancers(applyMiddleware(routerMiddleware(history)))

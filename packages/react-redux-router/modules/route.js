@@ -12,6 +12,7 @@ class Route extends React.Component {
     computedMatch: PropTypes.object, // private, from <Switch>
     path: PropTypes.string,
     exact: PropTypes.bool,
+    disabled: PropTypes.book,
     component: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   };
@@ -36,9 +37,11 @@ class Route extends React.Component {
 
   render() {
     const { match } = this.state;
-    const { children, component } = this.props;
+    const { children, component, disabled } = this.props;
     const { history, location, push } = this.context.router;
     const props = { match, location, history, push };
+
+    if (disabled) return null;
 
     if (component) return match ? React.createElement(component, props) : null;
 
