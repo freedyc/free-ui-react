@@ -1,6 +1,6 @@
 {
-  "name": "modal",
-  "version": "0.1.0",
+  "name": "@dengyongchao/modal",
+  "version": "0.1.1",
   "description": "React Modal",
   "repository": "",
   "license": "MIT",
@@ -10,7 +10,10 @@
   "files": [
     "es",
     "index.js",
-    "umd"
+    "umd",
+    "modal.css",
+    "headre.js",
+    "modal.js"
   ],
   "main": "index.js",
   "module": "es/index.js",
@@ -39,6 +42,7 @@
     "eslint-plugin-react": "^7.7.0",
     "gzip-size": "^4.1.0",
     "jest": "^22.4.3",
+    "node-sass": "^4.9.0",
     "pretty-bytes": "^4.0.2",
     "raf": "^3.4.0",
     "rollup": "^0.58.2",
@@ -61,5 +65,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "@dengyongchao/portal": "^0.5.1"
+  }
 }
