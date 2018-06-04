@@ -41,9 +41,7 @@ export default class History {
   }
 
   push(path) {
-    console.log(path);
     const location = getPath(path);
-    console.log(location);
     const current = [{key: rand()}, '', location];
     this.histories.push(current);
     switch(this.mode) {
