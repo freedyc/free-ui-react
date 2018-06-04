@@ -13,8 +13,8 @@ const rand = () => Math.random().toString(36).slice(2);
 const pathReg = /^(?:(?:http(?:s)?):\/\/(?:[^/]+))?\/(.*)/i;
 
 const getPath = (href) => {
-  const [ url, path ] = decodeURI(pathReg.exec(href)) || [];
-  return '/' + (path ? path : href).replace(/^[#\/]+/, '');
+  const [ url, path ] = pathReg.exec(href) || [];
+  return '/' + decodeURI(path ? path : href).replace(/^[#\/]+/, '');
 };
 
 export default class History {
@@ -41,7 +41,9 @@ export default class History {
   }
 
   push(path) {
+    console.log(path);
     const location = getPath(path);
+    console.log(location);
     const current = [{key: rand()}, '', location];
     this.histories.push(current);
     switch(this.mode) {
