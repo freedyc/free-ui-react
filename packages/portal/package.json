@@ -1,11 +1,11 @@
 {
-  "name": "h-portal",
-  "version": "0.1.0",
-  "description": "",
+  "name": "@dengyongchao/portal",
+  "version": "0.5.1",
+  "description": "Portal",
   "repository": "",
   "license": "MIT",
   "authors": [
-    "gsmlg"
+    "dyc"
   ],
   "files": [
     "es",
@@ -61,5 +61,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": []
+  "keywords": [
+    "React Component"
+  ]
 }

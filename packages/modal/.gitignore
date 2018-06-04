@@ -1,5 +1,5 @@
-node_modules
-umd
+/node_modules
+/umd
 *.js
-es
+/es
 
