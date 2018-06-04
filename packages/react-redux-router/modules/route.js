@@ -12,7 +12,7 @@ class Route extends React.Component {
     computedMatch: PropTypes.object, // private, from <Switch>
     path: PropTypes.string,
     exact: PropTypes.bool,
-    disabled: PropTypes.book,
+    disabled: PropTypes.bool,
     component: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   };
