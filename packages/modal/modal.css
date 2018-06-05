@@ -58,3 +58,59 @@
   bottom: 0;
   overflow: auto;
   z-index: 1000; }
+
+.ddi-modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #eaeaea;
+  width: 0;
+  height: 0; }
+  .ddi-modal-content .actions {
+    margin: 20px 30px;
+    text-align: right; }
+  .ddi-modal-content .actions .btn {
+    display: inline-block;
+    padding: 7px 20px 5px;
+    border: 1px solid #c8c8c8;
+    border-radius: 2px;
+    background: #eee;
+    background: linear-gradient(to bottom, #fff, #eaeaea);
+    vertical-align: middle;
+    cursor: pointer;
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+    height: 33px; }
+    .ddi-modal-content .actions .btn.disabled {
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      cursor: default; }
+  .ddi-modal-content .actions .ok {
+    margin: 0 10px 0 0;
+    background: #3F86CD;
+    background: linear-gradient(to bottom, #62A5EA, #3F86CD);
+    border: 1px solid #6498CD;
+    color: #fff; }
+  .ddi-modal-content .message {
+    display: block;
+    overflow: hidden;
+    margin: 12px 24px;
+    padding: 4px 4px 4px 30px;
+    font-size: 12px; }
+    .ddi-modal-content .message > i {
+      float: right;
+      font-family: Helvetica Neue, monospace;
+      font-weight: 700;
+      font-style: normal; }
+      .ddi-modal-content .message > i:hover {
+        color: #666;
+        cursor: pointer; }
+    .ddi-modal-content .message.error {
+      border: 1px solid #dd0000;
+      color: #880000; }
+    .ddi-modal-content .message.info {
+      border: 1px solid #5fc80a;
+      color: #04a40c; }
