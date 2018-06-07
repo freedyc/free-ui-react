@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@dengyongchao/modal": "^0.1.3",
-    "@dengyongchao/portal": "^0.5.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "@dengyongchao/modal": "*"
   },
   "scripts": {
     "start": "react-scripts start",
