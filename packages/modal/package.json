@@ -8,12 +8,12 @@
     "dengyongchao"
   ],
   "files": [
+    "modal.js",
     "es",
     "index.js",
     "umd",
     "modal.css",
-    "headre.js",
-    "modal.js"
+    "headre.js"
   ],
   "main": "index.js",
   "module": "es/index.js",

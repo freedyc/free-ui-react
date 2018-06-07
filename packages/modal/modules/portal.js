@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component, Children } from 'react';
 import ReactDOM from 'react-dom';
 
 
@@ -22,11 +22,15 @@ class Portal extends Component {
     }
 
     renderPortal() {
-        if (!this.props.open) return
+        const {
+            open,
+            children
+        } = this.props;
+        if (!open) return false;
         this.mountPortal()
         this.portal = ReactDOM.unstable_renderSubtreeIntoContainer(
             this,
-            this.props.children,
+            Children.only(children),
             this.rootNode
         )
     }
@@ -43,13 +47,37 @@ class Portal extends Component {
     unmountPortal() {
         if (!this.rootNode) return false;
         ReactDOM.unmountComponentAtNode(this.rootNode);
-        this.rootNode.parentNode.removeChild(this.rootNode);
+        document.body.removeChild(this.rootNode);
         this.rootNode = null;
         this.portal = null;
     }
 
     render() {
         return null;
+    }
+}
+
+class Portal1 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.el = document.createElement('div');
+    }
+
+    componentDidMount() {
+        document.body.appendChild(this.el);
+    }
+
+    componentWillUnmount() {
+        document.body.removeChild(this.el);
+    }
+
+    render() {
+        const  { open } = this.props;
+        if(!open) return null;
+        return ReactDOM.createPortal(
+            this.props.children,
+            this.el,
+        );
     }
 }
 

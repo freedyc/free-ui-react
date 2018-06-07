@@ -1,4 +1,4 @@
-import Portal from '@dengyongchao/portal';
+import Portal from './portal';
 import React, { Component }  from 'react';
 import Header from './header';
 
@@ -19,7 +19,23 @@ class Modal extends Component {
         drapHeader: true,
         showHeader: true,
         showMask: true,
-        size: {width: 520, height: 450},
+        size: {width: 550, height: 600 },
+    }
+
+    componentWillUpdate() {
+        const { open, size } = this.props;
+        const { innerHeight, innerWidth } = window;
+        if(!open) {
+            const wc = (innerWidth - size.width)/2;
+            const hc = (innerHeight - size.height)/2;
+            console.log(this.props);
+            this.setState({
+                left: wc,
+                top: hc,
+                initLeft: wc,
+                initTop: hc,
+            })
+        }
     }
 
     updatePostions = (left, top) => {
@@ -119,4 +135,5 @@ const ModalWrap = (props) => {
         </div>
     )
 }
+
 export default Modal;
