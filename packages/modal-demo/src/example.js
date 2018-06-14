@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import Modal from '@dengyongchao/modal';
 import '@dengyongchao/modal/modal.css';
+import { Button } from  'styled-mask';
 
 class Example extends Component {
     state = {
@@ -28,9 +29,9 @@ class Example extends Component {
     render() {
         return (
             <div>
-                <button type="button" onClick={ this.show }>Show Modal </button>
-                <button type="button" onClick={ this.show1 }>Show Modal --Hide Mask</button>
-                <button type="button" onClick={ this.show2 }>Show Modal --Hide Header, Mask</button>
+                <Button theme={{color: 'green'}} type="button" onClick={ this.show }>Show Modal </Button>
+                <Button theme={{color: 'yellow'}} type="button" onClick={ this.show1 }>Show Modal --Hide Mask</Button>
+                <Button theme={{color: 'blue'}} type="button" onClick={ this.show2 }>Show Modal --Hide Header, Mask</Button>
                 <Modal {...this.state} close={this.close} size={{width: 500, height: 300}}>
                     <h1>You Contnet</h1>
                     <h2>You content</h2>
