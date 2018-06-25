@@ -155,7 +155,7 @@ export function isViewName(str) {
   if (endWith(str, '-')) return false;
   if (include(str, '*')) return false;
   if (include(str, '__')) return false;
-  const reg = /^[0-9a-zA-Z_-\u4E00-\u9FA5\uF900-\uFA2D]+$/;
+  const reg = /^[0-9a-zA-Z_\-\u4E00-\u9FA5\uF900-\uFA2D]+$/;
   return reg.test(str);
 }
 
@@ -177,7 +177,7 @@ export function isRRName(str) {
   if (['*', '.', '*.'].includes(str)) return true;
   if (include(str, '..')) return false;
   if (!maxDomainLen(str, 63)) return false;
-  const reg = /^[0-9a-zA-Z_-\u4E00-\u9FA5\uF900-\uFA2D]+$/;
+  const reg = /^[0-9a-zA-Z_\-\u4E00-\u9FA5\uF900-\uFA2D]+$/;
   return reg.test(str);
 }
 
