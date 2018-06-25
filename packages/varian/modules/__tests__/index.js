@@ -198,7 +198,7 @@ test('test {isRRName}', () => {
 
 test('test {isDomainName}', () => {
   expect(isDomainName('abcd')).toBeTruthy();
-  expect(isDomainName('狗')).toBeFalsy();
+  expect(isDomainName('狗')).toBeTruthy();
 });
 
 test('test {isMAC}', () => {
