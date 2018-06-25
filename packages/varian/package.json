@@ -1,6 +1,6 @@
 {
   "name": "varian-wrynn",
-  "version": "0.2.0",
+  "version": "0.2.11",
   "description": "Varian is a Validate library for pure data",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -22,8 +22,6 @@
     "clean": "git clean -fdX .",
     "lint": "eslint modules",
     "test": "jest"
-  },
-  "peerDependencies": {
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -62,6 +60,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [
-  ]
+  "keywords": []
 }
