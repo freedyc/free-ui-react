@@ -1,6 +1,6 @@
 {
   "name": "varian-wrynn",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "Varian is a Validate library for pure data",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -62,7 +62,9 @@
       "litcoffee",
       "coffee.md"
     ],
-    "transform": {".*": "<rootDir>/tools/test-preprocessor.js"},
+    "transform": {
+      ".*": "<rootDir>/tools/test-preprocessor.js"
+    },
     "testRegex": "modules/.*\\.(coffee|litcoffee|coffee.md)$",
     "setupFiles": [
       "raf/polyfill"
