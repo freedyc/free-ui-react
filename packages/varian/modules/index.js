@@ -62,6 +62,11 @@ export function isEmail(email) {
   return name && domain && isDomainName(domain);
 }
 
+export function isPhone(value) {
+    const reg = /^(\d{2,4}-?)?\d{6,11}$/;
+    return reg.test(value);
+};
+
 export function isSNMPCom(str) {
   return byteLength(str) < 256 && byteLength(str) > 0;
 }

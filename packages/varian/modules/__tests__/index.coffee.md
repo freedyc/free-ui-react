@@ -12,6 +12,7 @@
       isName,
       isAlpha,
       isEmail,
+      isPhone,
       isSNMPCom,
       isInteger,
       isRange,
@@ -226,6 +227,33 @@
           .toBeFalsy()
 
         expect isEmail '555@-666'
+          .toBeFalsy()
+
+
+- 电话号码
+
+电话号码为
+2-4位区号加 - 可选
+6-11位号码
+
+      it 'should be a valid phone number', =>
+
+        expect isPhone '086018812345678'
+          .toBeTruthy()
+
+        expect isPhone '13800138000'
+          .toBeTruthy()
+
+        expect isPhone '010-86001234'
+          .toBeTruthy()
+
+        expect isPhone '999'
+          .toBeFalsy()
+
+        expect isPhone '95535'
+          .toBeFalsy()
+
+        expect isPhone '0860121605073100'
           .toBeFalsy()
 
 
