@@ -208,6 +208,7 @@ export function isDUID(duid) {
 };
 
 export function isIPv4 (ip) {
+  if (ip === '0.0.0.0') return true;
   const ipList = ip.split('.');
   return isIntRange(ipList[0], 1, 255) &&
     isIntRange(ipList[1], 0, 255) &&
@@ -217,7 +218,7 @@ export function isIPv4 (ip) {
 }
 
 export function isIPv6(ip) {
-  if (/^[^0-9A-Fa-f:]+$/.test(ip)) return false;
+  if (/[^0-9A-Fa-f:]/.test(ip)) return false;
   if (include(ip, ':::')) return false;
   if (include(ip, '::')) {
     let [p1, p2, ...rest] = ip.split('::');
