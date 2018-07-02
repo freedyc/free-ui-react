@@ -1,0 +1,145 @@
+@mixin size ($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+$ddi-prefix: 'ddi';
+$modal-prefix-cls: '#{$ddi-prefix}-modal';
+$del-img: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMi8wOS8xMs/16TAAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABOElEQVQokWWQoa7CUBBED+WmhiAQGBIUqUJUVpAgrkaS8AvgSAlo/qECuJ9RjSqEUAHBIRDwEzi4+wT0vvdg3OzOTHYWEZEsy2Q8Hst2u5VP7HY7mc1mst/vRUREnc9nVqsV1loWiwXP55NutwvAZrNxuyRJaDQaKM/zKGCtxRjjuDEGay0ASikqlQolEZE8z0mSxC2LkIL7vs90OqXdbr8MAJ+mAn/FAO6eKIrQWvOJXq/nxP8MWZaxXq+/DGmakue546X3W1kul26olOLxePymeh6j0YhOp0NZaz03xvCugu/7xHFMEAScTicARITD4UC9XqdcrVbn9/vdJcdxTBiGtFotarUax+PRmW63G95gMHDiyWRCGIbuFK01w+HQvbnf7786XK9XlFI0m82v0gCXywWAIAj4AaN5rTayHowiAAAAAElFTkSuQmCC";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    paddding: 0;
+}
+.#{$modal-prefix-cls} {
+    &-mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        outline: 0;
+        background-color: rgba(0, 0, 0, 0.65);
+        z-index: 999;
+        .hide {
+            display: none;
+        }
+    }
+    &-header {
+        position: relative;
+        border-bottom: 1px solid #c9c9c9;
+        background: linear-gradient(to bttom, #fff, whitesmoke);
+        border-radius:6px 6px 0 0;
+        height: 50px;
+
+        span.loading {
+            display: inline-block;
+            position: absolute;
+            left: 9px;
+            top: 50%;
+            margin-top: -9px;
+            // background: url(~sm-loading.gif) 0 0 no-repeat;
+            @include size(18px);
+
+        }
+        span.title {
+            display: inline-block;
+            margin-left: 32px;
+            text-align: left;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            font-family: arial, 微软雅黑;
+            font-size: 20px;
+            color: #444;
+        }
+        i.close {
+            position: absolute;
+            display: block;
+            right: 13px;
+            top: 50%;
+            margin-top: -6px;
+            background: url($del-img) 0 0 no-repeat;
+            @include size(12px);
+
+        }
+    }
+    &-wrap {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+        z-index: 1000;
+    }
+
+
+    &-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: #fff;
+        border-radius: 6px;
+        border: 1px solid #eaeaea;
+        @include size(0, 0);
+        .actions {
+            margin: 20px 30px;
+            text-align: right;
+        }
+        .actions .btn {
+            display: inline-block;
+            padding: 7px 20px 5px;
+            border: 1px solid #c8c8c8;
+            border-radius: 2px;
+            background: #eee;
+            background: linear-gradient(to bottom, #fff, #eaeaea);
+            vertical-align: middle;
+            cursor: pointer;
+            color:#666;
+            font-weight: bold;
+            font-size: 14px;
+            height: 33px;
+            &.disabled {
+                opacity: 0.7;
+                filter: alpha(opacity=70);
+                cursor: default;
+            }
+        }
+
+        .actions .ok {
+            margin: 0 10px 0 0;
+            background: #3F86CD;
+            background: linear-gradient(to bottom, #62A5EA, #3F86CD);
+            border: 1px solid #6498CD;
+            color: #fff;
+        }
+
+        .message {
+            display: block;
+            overflow: hidden;
+            margin: 12px 24px;
+            padding: 4px 4px 4px 30px;
+            font-size: 12px;
+            >i {
+                float: right;
+                font-family: Helvetica Neue, monospace;
+                font-weight: 700;
+                font-style: normal;
+                &:hover {
+                    color: #666;
+                    cursor: pointer;
+                }
+            }
+            &.error {
+                // background: #ffe3e3 url(~baseDialog/exclamation.png) 8px 50% no-repeat;
+                border: 1px solid #dd0000;
+                color: #880000;
+            }
+            &.info {
+                // background: #f6ffeb url(~baseDialog/flashInfo.png) 8px 50% no-repeat;
+                border: 1px solid #5fc80a;
+                color: #04a40c;
+            }
+        }
+    }
+}
