@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/events",
-  "version": "0.1.0",
+  "version": "0.2.15",
   "description": "Provide Events object",
   "repository": "gsmlg/react-suit",
   "license": "MIT",

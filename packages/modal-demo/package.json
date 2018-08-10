@@ -1,12 +1,12 @@
 {
   "name": "modal-demo",
-  "version": "0.1.0",
+  "version": "0.2.15",
   "private": true,
   "dependencies": {
+    "@dengyongchao/modal": "^0.2.15",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4",
-    "@dengyongchao/modal": "*"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

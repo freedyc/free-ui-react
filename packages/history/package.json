@@ -1,6 +1,6 @@
 {
   "name": "@gsmlg/history",
-  "version": "0.2.9",
+  "version": "0.2.15",
   "description": "history, change with browser history",
   "repository": "gsmlg/react-suit",
   "license": "MIT",
@@ -59,7 +59,7 @@
     "webpack-dev-server": "1"
   },
   "dependencies": {
-    "@gsmlg/events": "^0.1.0"
+    "@gsmlg/events": "^0.2.15"
   },
   "browserify": {
     "transform": [
