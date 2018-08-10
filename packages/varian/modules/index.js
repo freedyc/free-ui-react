@@ -129,6 +129,11 @@ export function isStartWithNumber(str) {
   return /^\d/.test(str);
 }
 
+export function isStartWithLetter(str) {
+  str = '' + str;
+  return /^[a-zA-Z]/.test(str);
+}
+
 export function groupOf(arr, checker) {
   for (let i = 0, j = arr.length; i < j; i++) {
     let val = arr[i];
