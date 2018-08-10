@@ -124,6 +124,11 @@ export function endWith(str, char) {
   return str.indexOf(char) === len - char.length;
 }
 
+export function isStartWithNumber(str) {
+  str = '' + str;
+  return /^\d/.test(str);
+}
+
 export function groupOf(arr, checker) {
   for (let i = 0, j = arr.length; i < j; i++) {
     let val = arr[i];
