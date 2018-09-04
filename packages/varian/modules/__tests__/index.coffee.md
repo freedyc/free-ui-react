@@ -413,6 +413,12 @@ punycode长度不超过63
         expect isRRName '*'
           .toBeTruthy()
 
+        expect isRRName '*.'
+          .toBeTruthy()
+
+        expect isRRName '.'
+          .toBeTruthy()
+
         expect isRRName '*f'
           .toBeFalsy()
 
@@ -428,6 +434,12 @@ punycode长度不超过63
 以 . 分割，每段都需要符合rr规则
 
       it 'should be a domain name', =>
+
+        expect isDomainName '.'
+          .toBeTruthy()
+
+        expect isDomainName 'zdns.cn.'
+          .toBeTruthy()
 
         expect isDomainName 'jokerman'
           .toBeTruthy()

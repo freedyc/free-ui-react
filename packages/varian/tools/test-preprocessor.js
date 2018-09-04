@@ -5,8 +5,10 @@ module.exports = {
   process: (src, path, ...rest) => {
     // CoffeeScript files can be .coffee, .litcoffee, or .coffee.md
     if (coffee.helpers.isCoffee(path)) {
-      if (coffee.helpers.invertLiterate(src)) src = coffee.helpers.invertLiterate(src);
       return coffee.compile(src, {
+        filename: path,
+        literate: coffee.helpers.isLiterate(path),
+        inlineMap: true,
         bare: true,
         transpile: {
           presets: ['jest', 'es2015', 'stage-1']
