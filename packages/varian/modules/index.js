@@ -184,6 +184,7 @@ export function isZoneName(str) {
   if (include(str, '__')) return false;
   if (include(str, '..')) return false;
   if (include(str, 'xn--')) return false;
+  str = str.replace(/\.$/, '');
   return str.split('.').every(isRRName);
 }
 
@@ -205,6 +206,7 @@ export function isDomainName(str) {
   if (include(str, '__')) return false;
   if (include(str, '..')) return false;
   if (include(str, 'xn--')) return false;
+  str = str.replace(/\.$/, '');
   return str.split('.').every(isRRName);
 }
 

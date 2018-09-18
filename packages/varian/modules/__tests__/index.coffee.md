@@ -367,6 +367,9 @@
 
       it 'should be a zone name', =>
 
+        expect isZoneName('com.')
+          .toBeTruthy()
+
         expect isZoneName('zdns.cn')
           .toBeTruthy()
 
