@@ -199,6 +199,7 @@ export function isRRName(str) {
 
 export function isDomainName(str) {
   str = str + '';
+  if (str === '.') return true;
   if (!maxDomainLen(str, 254)) return false;
   if (beginWith(str, '-')) return false;
   if (endWith(str, '-')) return false;
