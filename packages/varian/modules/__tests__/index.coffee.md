@@ -36,6 +36,8 @@
       isDUID,
       isIPv4,
       isIPv6,
+      isPort,
+      isURL
     } from '../index'
 
 
@@ -91,7 +93,7 @@
 
 ### 常规验证规则
 
-    describe 'Common Validators', =>
+    describe 'Basic Validators', =>
 
 
 - 验证超过长度时返回true
@@ -546,3 +548,58 @@ punycode长度不超过63
 
         expect isIPv6 'f3bb::a::c'
           .toBeFalsy()
+
+
+### 公共验证规则
+
+    describe 'Common Validators', =>
+
+端口验证
+
+      it 'should be port, range in 1-65535', =>
+        
+        expect isPort '1'
+          .toBeTruthy()
+
+        expect isPort '65535'
+          .toBeTruthy()
+
+        expect isPort '80'
+          .toBeTruthy()
+
+        expect isPort '20210'
+          .toBeTruthy()
+
+        expect isPort '0'
+          .toBeFalsy()
+
+        expect isPort '65536'
+          .toBeFalsy()
+
+        expect isPort '0x20'
+          .toBeFalsy()
+
+URL验证
+
+url验证支持http，https，ftp协议开头的页面
+
+      it 'should be valid url, protocal can be `http`, `https`, `ftp`, host can be `ip or domain`', =>
+
+        expect isURL 'http://c.cc'
+          .toBeTruthy()
+
+        expect isURL 'https://c.cc'
+          .toBeTruthy()
+
+        expect isURL 'ftp://c.cc'
+          .toBeTruthy()
+
+        expect isURL 'http://1.2.3.4'
+          .toBeTruthy()
+
+        expect isURL 'http://[2001::65:33:fac1]:8090'
+          .toBeTruthy()
+
+        expect isURL 'http://[2f::3x]'
+          .toBeFalsy()
+

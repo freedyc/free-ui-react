@@ -1,3 +1,7 @@
+/**
+ * Basic
+ */
+
 export function byteLength(str) {
   // returns the byte length of an utf8 string
   let s = str.length;
@@ -142,10 +146,9 @@ export function groupOf(arr, checker) {
   return true;
 }
 
-
-/*
-  DNS
-*/
+/**
+ *  DNS
+ */
 
 import punycode from 'punycode';
 
@@ -211,9 +214,9 @@ export function isDomainName(str) {
   return str.split('.').every(isRRName);
 }
 
-/*
-  DHCP
-*/
+/**
+ *  DHCP
+ */
 
 export function isMAC(mac) {
   const reg = /^[0-9a-f]{1,2}([:-])[0-9a-f]{1,2}(\1[0-9a-f]{1,2}){4}$/i;
@@ -263,3 +266,25 @@ export function isIPv6(ip) {
   }
   return true;
 }
+
+
+/**
+ *  common
+ */
+
+export function isPort(port) {
+  return isInteger(port) && isRange(port, 1, 65535);
+};
+
+export function isURL(url) {
+  const reg = /(?:(?:http(?:s)?)|(?:ftp)):\/\/((?:[^:/]+)|(?:\[[a-fA-F0-9:]+\]))(?::(\d{1,5}))?(?:\/|$)/;
+  const match = reg.exec(url);
+  const domain = match ? `${match[1]}` : '';
+  let v6;
+  if (domain[0] === '[' && domain[domain.length - 1] === ']') {
+    v6 = domain.slice(1, -1);
+  }
+  let port = match ? +match[2] : '';
+  if (!port) { port = 80; }
+  return /^(?:http(?:s)?)|(?:ftp):\/\//.test(url) && (isDomainName(domain) || isIPv6(v6)) && isPort(port);
+};
