@@ -206,7 +206,7 @@ export function isDomainName(str) {
   if (!maxDomainLen(str, 254)) return false;
   if (beginWith(str, '-')) return false;
   if (endWith(str, '-')) return false;
-  if (include(str, '*')) return false;
+  if (include(str, '**')) return false;
   if (include(str, '__')) return false;
   if (include(str, '..')) return false;
   if (include(str, 'xn--')) return false;
