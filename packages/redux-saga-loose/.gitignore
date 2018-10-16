@@ -1,0 +1,9 @@
+es
+node_modules
+umd
+/*.js
+!rollup.config.js
+!webpack.confg.js
+!tests.webpack.js
+!karma.conf.js
+/internal
