@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Portal from 'h-portal';
+import Portal from '@dengyongchao/portal';
 
 class App extends Component {
   render() {
