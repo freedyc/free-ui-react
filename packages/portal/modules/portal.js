@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 
 class Portal extends Component {
+
     static defaultProps = {
         open: false,
     }
