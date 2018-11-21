@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@dengyongchao/modal": "^0.2.15",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5",
     "react-scripts": "1.1.4"
   },
   "scripts": {

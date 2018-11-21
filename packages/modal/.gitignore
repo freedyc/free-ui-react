@@ -3,4 +3,4 @@ umd
 /*.js
 es
 !rollup.config.js
-
+.sass-cache

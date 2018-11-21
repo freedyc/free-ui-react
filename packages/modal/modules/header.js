@@ -34,7 +34,7 @@ class Header extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         // console.log("%c header update", "color: orange", nextState, nextProps)
         if(nextProps.initLeft === this.props.initLeft && nextProps.initTop === this.props.initTop) return false;
-        console.log("%c update Component", "color: green");
+        // console.log("%c update Component", "color: green");
         return true;
     }
 
@@ -81,13 +81,13 @@ class Header extends Component {
     resize() {
         this.innerWidth = window.innerWidth;
         this.innerHeight = window.innerHeight;
-        console.log('%c The window resize:', 'color: green', `width:${this.innerWidth} height:${this.innerHeight}`);
+        // console.log('%c The window resize:', 'color: green', `width:${this.innerWidth} height:${this.innerHeight}`);
     }
 
     keydown(e) {
         const { closeEsc } = this.props;
         if (closeEsc && (e.key === "Escape" || e.which === 27)) {
-            console.log('%c close modal', 'color: blue');
+            // console.log('%c close modal', 'color: blue');
             this.props.close();
         }
     }
@@ -95,7 +95,7 @@ class Header extends Component {
     handleMouseDown(e){
         e.stopPropagation();
         e.preventDefault();
-        console.log('%c header first click:', 'color: green',`pageX: ${e.pageX}, pageY: ${e.pageY}`);
+        // console.log('%c header first click:', 'color: green',`pageX: ${e.pageX}, pageY: ${e.pageY}`);
         this.setState({
             clientx: e.pageX,
             clienty: e.pageY,

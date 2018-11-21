@@ -1,4 +1,4 @@
-import Portal from './portal';
+import Portal from '@dengyongchao/portal';
 import React, { Component }  from 'react';
 import Header from './header';
 
@@ -19,7 +19,7 @@ class Modal extends Component {
         drapHeader: true,
         showHeader: true,
         showMask: true,
-        size: {width: 550, height: 600 },
+        size: { width: 550, height: 600 },
     }
 
     componentWillUpdate() {
@@ -28,7 +28,7 @@ class Modal extends Component {
         if(!open) {
             const wc = (innerWidth - size.width)/2;
             const hc = (innerHeight - size.height)/2;
-            console.log(this.props);
+            // console.log(this.props);
             this.setState({
                 left: wc,
                 top: hc,
@@ -50,8 +50,8 @@ class Modal extends Component {
             initTop
         } = this.state
         if(left === initLeft && top === initTop) return false;
-        console.log('%c init left, top value change:','color: green', `left=${left}, top:${top}`);
-        console.log(this);
+        // console.log('%c init left, top value change:','color: green', `left=${left}, top:${top}`);
+        // console.log(this);
         this.setState({initLeft: left, initTop: top});
     }
 
@@ -59,7 +59,9 @@ class Modal extends Component {
         const {
             open,
             close,
-            size
+            size,
+            title,
+            loading,
         } = this.props;
 
         const { width, height } = size;
@@ -76,7 +78,7 @@ class Modal extends Component {
             initLeft,
             initTop
         } = this.state;
-        console.log("Modal render");
+
         return (
             <Portal open={ open }>
                 <div>
@@ -93,6 +95,8 @@ class Modal extends Component {
                             showHeader={showHeader}
                             drapHeader={drapHeader}
                             closeEsc={closeEsc}
+                            title={title}
+                            loading={loading}
                         />
                         { this.props.children }
                     </ModalWrap>
@@ -120,7 +124,7 @@ const ModalWrap = (props) => {
     const handleClick = (e) => {
         e.stopPropagation();
         const className = e.target.className;
-        console.log("%c trigger click", "color:green ", `Click element: ${e.target.className}`);
+        // console.log("%c trigger click", "color:green ", `Click element: ${e.target.className}`);
         if(className !== clazz) return false;
         if(isClickWrap) close();
     }
