@@ -1,6 +1,6 @@
 {
   "name": "@dengyongchao/modal",
-  "version": "0.2.15",
+  "version": "0.2.2",
   "description": "React Modal",
   "repository": "",
   "license": "MIT",
@@ -67,6 +67,6 @@
   },
   "keywords": [],
   "dependencies": {
-    "@dengyongchao/portal": "^0.2.15"
+    "@dengyongchao/portal": "^0.5.2"
   }
 }
