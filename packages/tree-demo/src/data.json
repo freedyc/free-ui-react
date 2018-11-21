@@ -1,0 +1,17 @@
+[{
+  "id": "china",
+  "name": "中国",
+  "parentId": ""
+}, {
+  "id": "beijing",
+  "name": "北京",
+  "parentId": "china"
+}, {
+  "id": "sichuan",
+  "name": "四川",
+  "parentId": "china"
+}, {
+  "id": "chengdu",
+  "name": "成都",
+  "parentId": "sichuan"
+}]
