@@ -64,7 +64,7 @@ class Header extends Component {
             let nTop = nega(e.pageY - clienty + initTop);
             nLeft = nLeft + width > innerWidth ? nega(innerWidth-width) : nLeft;
             nTop = nTop + height > innerHeight ? nega(innerHeight-height) : nTop;
-            this.props.updatePostions(nLeft, nTop);
+            this.props.updatePosition(nLeft, nTop);
         }
         return false;
     }
@@ -75,7 +75,7 @@ class Header extends Component {
             clientx: 0,
             clienty: 0
         });
-        this.props.updateInitPos();
+        this.props.updateInitPosition();
     }
 
     resize() {
@@ -85,8 +85,8 @@ class Header extends Component {
     }
 
     keydown(e) {
-        const { closeEsc } = this.props;
-        if (closeEsc && (e.key === "Escape" || e.which === 27)) {
+        const { closeOnEsc } = this.props;
+        if (closeOnEsc && (e.key === "Escape" || e.which === 27)) {
             // console.log('%c close modal', 'color: blue');
             this.props.close();
         }

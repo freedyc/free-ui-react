@@ -3,6 +3,16 @@ import React, { Component }  from 'react';
 import Header from './header';
 
 class Modal extends Component {
+    static defaultProps = {
+        closeOnDcumentClick: true,
+        closeOnEsc: true,
+        drapHeader: true,
+        showHeader: true,
+        showMask: true,
+        size: { width: 520, height: 400 },
+        close: () => {}
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -13,22 +23,12 @@ class Modal extends Component {
         }
     }
 
-    static defaultProps = {
-        closeDocClick: true,
-        closeEsc: true,
-        drapHeader: true,
-        showHeader: true,
-        showMask: true,
-        size: { width: 550, height: 600 },
-    }
-
     componentWillUpdate() {
         const { open, size } = this.props;
         const { innerHeight, innerWidth } = window;
         if(!open) {
             const wc = (innerWidth - size.width)/2;
             const hc = (innerHeight - size.height)/2;
-            // console.log(this.props);
             this.setState({
                 left: wc,
                 top: hc,
@@ -38,11 +38,11 @@ class Modal extends Component {
         }
     }
 
-    updatePostions = (left, top) => {
+    updatePosition = (left, top) => {
         this.setState({ left: left, top: top });
     }
 
-    updateInitPos = () => {
+    updateInitPosition = () => {
         const {
             left,
             top,
@@ -70,8 +70,10 @@ class Modal extends Component {
             showMask,
             drapHeader,
             showHeader,
-            closeEsc
+            closeOnEsc,
+            closeOnDcumentClick
         } = this.props;
+
         const {
             left,
             top,
@@ -80,13 +82,13 @@ class Modal extends Component {
         } = this.state;
 
         return (
-            <Portal open={ open }>
+            <Portal open={open}>
                 <div>
                     <ModalMask {...{showMask}} />
-                    <ModalWrap {...{left, top, width, height, close}}>
+                    <ModalWrap {...{left, top, width, height, close, closeOnDcumentClick}}>
                         <Header
-                            updatePostions={ this.updatePostions }
-                            updateInitPos={ this.updateInitPos }
+                            updatePosition={this.updatePosition }
+                            updateInitPosition={this.updateInitPosition }
                             close={close}
                             initLeft={initLeft}
                             initTop={initTop}
@@ -94,7 +96,7 @@ class Modal extends Component {
                             height={height}
                             showHeader={showHeader}
                             drapHeader={drapHeader}
-                            closeEsc={closeEsc}
+                            closeOnEsc={closeOnEsc}
                             title={title}
                             loading={loading}
                         />
@@ -118,15 +120,16 @@ const ModalWrap = (props) => {
         width,
         height,
         close,
-        isClickWrap=true
+        closeOnDcumentClick,
     } = props;
     const clazz = "ddi-modal-wrap";
     const handleClick = (e) => {
         e.stopPropagation();
-        const className = e.target.className;
-        // console.log("%c trigger click", "color:green ", `Click element: ${e.target.className}`);
-        if(className !== clazz) return false;
-        if(isClickWrap) close();
+        if (closeOnDcumentClick) {
+            const className = e.target.className;
+            if (className !== clazz) return false;
+            close();
+        }
     }
 
     return (
