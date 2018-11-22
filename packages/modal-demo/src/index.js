@@ -1,9 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import Example from './ModalExample';
-ReactDOM.render(<Example />, document.getElementById('root'));
+import ModalTest from './Components/ModalExample';
+import CheckboxGroup from './Components/Checkbox';
+
+const IndexComponent = () => {
+  return (
+    <div>
+      <ModalTest />
+      <CheckboxGroup />
+    </div>
+  )
+}
+
+ReactDOM.render(<IndexComponent />, document.getElementById('root'));
 
 registerServiceWorker();

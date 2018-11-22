@@ -3,7 +3,9 @@
   "version": "0.2.15",
   "private": true,
   "dependencies": {
-    "@dengyongchao/modal": "^0.2.15",
+    "@dengyongchao/modal": "*",
+    "classnames": "^2.2.6",
+    "immutable": "^4.0.0-rc.12",
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
     "react-scripts": "1.1.4"

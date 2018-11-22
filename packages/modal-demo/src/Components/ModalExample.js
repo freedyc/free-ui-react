@@ -3,20 +3,21 @@ import Modal from '@dengyongchao/modal';
 import '@dengyongchao/modal/modal.css';
 
 class ModalExample extends Component {
-  state = { openOne: false }
+  state = { openOne: false, count: 1 }
   openOne = () => {
-    this.setState({ openOne: true })
-  }
-  openTwo = () => {
-    this.setState({ openTwo: true })
+    this.setState({ openOne: true, isChecked: false})
   }
   close = () => {
     this.setState({
       openOne: false,
-      openTwo: false,
      })
   }
-
+  addOne = () => {
+    this.setState({ count: this.state.count + 1})
+  }
+  change = (e) => {
+    this.setState({ isChecked: e.target.checked})
+  }
   render() {
     return (
       <div>
@@ -25,27 +26,17 @@ class ModalExample extends Component {
           <Modal
             open={this.state.openOne}
             close={this.close}
-            title="完整Modal展示"
-            loading={true} >
+            loading={true}
+            title="Modal Test"
+            >
               <h1>支持Esc关闭</h1>
               <h1>支持点击文档关闭</h1>
               <h1>支持点击关闭关闭</h1>
               <h1>显示标题</h1>
               <h1>显示Loding</h1>
-          </Modal>
-        </div>
-
-        <div style={{marginTop: "30px"}}>
-          <button type="button" className="button button-3d button-primary button-rounded" onClick={this.openTwo}>不带标题</button>
-          <Modal
-            open={this.state.openTwo}
-            close={this.close}
-            title="完整Modal展示">
-            <h1>支持Esc关闭</h1>
-            <h1>支持点击文档关闭</h1>
-            <h1>支持点击关闭关闭</h1>
-            <h1>隐藏标题</h1>
-            <h1>显示Loding</h1>
+              <button className="button button-3d button-primary button-rounded" onClick={this.addOne}>点我加1</button>
+              <h1>{this.state.count}</h1>
+            <PropConponent isChecked={this.state.isChecked} change={this.change} count={this.state.count} />
           </Modal>
         </div>
       </div>
@@ -53,4 +44,15 @@ class ModalExample extends Component {
   }
 };
 
+const PropConponent = (props) => {
+  return (
+    <div>
+      <label>
+        <input type="checkbox" onChange={(e) => props.change(e)} checked={props.isChecked} />
+      </label>
+      {props.count}
+      <span>{String(props.isChecked)}</span>
+  </div>
+  )
+}
 export default ModalExample;

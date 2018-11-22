@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Portal from '@dengyongchao/portal';
 
 class App extends Component {
+  state = {count: 1 };
+  onClickButton = () => {
+    console.log(this.state.count);
+    this.setState({count: this.state.count + 1 });
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Portal open={true}>Hello</Portal>
+        <button onClick={this.onClickButton}>点击</button>
+        <Portal open={true}>
+          <div>{this.state.count}</div>
+        </Portal>
       </div>
     );
   }
