@@ -4,7 +4,7 @@ import Header from './header';
 
 class Modal extends Component {
     static defaultProps = {
-        closeOnDcumentClick: true,
+        closeOnDcumentClick: false,
         closeOnEsc: true,
         drapHeader: true,
         showHeader: true,
@@ -62,6 +62,8 @@ class Modal extends Component {
             size,
             title,
             loading,
+            children,
+            footer,
         } = this.props;
 
         const { width, height } = size;
@@ -71,7 +73,7 @@ class Modal extends Component {
             drapHeader,
             showHeader,
             closeOnEsc,
-            closeOnDcumentClick
+            closeOnDcumentClick,
         } = this.props;
 
         const {
@@ -80,7 +82,6 @@ class Modal extends Component {
             initLeft,
             initTop
         } = this.state;
-
         return (
             <Portal open={open}>
                 <div>
@@ -100,7 +101,12 @@ class Modal extends Component {
                             title={title}
                             loading={loading}
                         />
-                        { this.props.children }
+                        <div className="ddi-modal-body">
+                            { children }
+                        </div>
+                        <div className="ddi-modal-footer">
+                            { footer }
+                        </div>
                     </ModalWrap>
                 </div>
             </Portal>
@@ -121,6 +127,7 @@ const ModalWrap = (props) => {
         height,
         close,
         closeOnDcumentClick,
+        children,
     } = props;
     const clazz = "ddi-modal-wrap";
     const handleClick = (e) => {
@@ -137,7 +144,7 @@ const ModalWrap = (props) => {
             <div
                 className="ddi-modal-content"
                 style={{left: left+'px', top: top+'px', width: width+'px', height: height+'px'}}>
-                { props.children }
+                { children }
             </div>
         </div>
     )

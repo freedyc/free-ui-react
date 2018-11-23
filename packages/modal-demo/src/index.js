@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import ModalTest from './Components/ModalExample';
+import ModalContentTest from './Components/ModalContentTest';
 import CheckboxGroup from './Components/Checkbox';
 
 const IndexComponent = () => {
@@ -10,6 +11,7 @@ const IndexComponent = () => {
     <div>
       <ModalTest />
       <CheckboxGroup />
+      <ModalContentTest />
     </div>
   )
 }

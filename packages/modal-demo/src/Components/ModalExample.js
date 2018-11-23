@@ -28,6 +28,7 @@ class ModalExample extends Component {
             close={this.close}
             loading={true}
             title="Modal Test"
+            footer="哈哈哈哈"
             >
               <h1>支持Esc关闭</h1>
               <h1>支持点击文档关闭</h1>

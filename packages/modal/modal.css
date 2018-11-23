@@ -57,6 +57,23 @@
   bottom: 0;
   overflow: auto;
   z-index: 1000; }
+.ddi-modal-body, .ddi-modal-footer {
+  padding: 0 20px; }
+.ddi-modal-body {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  margin-right: 20px;
+  overflow: auto; }
+.ddi-modal-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  overflow: auto; }
 .ddi-modal-content {
   position: absolute;
   left: 50%;

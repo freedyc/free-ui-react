@@ -1,6 +1,8 @@
 node_modules
 umd
 /*.js
+/*.css
+/*.css.map
 es
 !rollup.config.js
 .sass-cache

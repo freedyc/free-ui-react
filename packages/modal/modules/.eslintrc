@@ -12,6 +12,15 @@
   ],
   "rules": {
     "prefer-arrow-callback": 2,
-    "react/display-name": 0
-  }
+    "react/display-name": 0,
+    "react/no-deprecated:": 0
+  },
+  "settings": {
+        "react": {
+            "version": "0.14.5"
+        },
+        "propWrapperFunctions": [
+            "forbidExtraProps"
+        ]
+    }
 }
