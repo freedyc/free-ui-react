@@ -23,6 +23,21 @@ class Modal extends Component {
             initTop: 40,
         }
     }
+    afterOpen = () => {
+        console.log("after Open");
+        console.log(this.props, this.state);
+        const { open, size } = this.props;
+        console.log("update", open, size)
+        const { innerHeight, innerWidth } = window;
+        const wc = (innerWidth - size.width)/2;
+        const hc = (innerHeight - size.height)/2;
+        this.setState({
+            left: wc,
+            top: hc,
+            initLeft: wc,
+            initTop: hc,
+        })
+    }
 
     componentDidMount() {
         console.log("Dig Mount", this.state, this.props)
@@ -35,19 +50,19 @@ class Modal extends Component {
     }
     componentWillUpdate() {
         
-        const { open, size } = this.props;
-        console.log("update", open, size)
-        const { innerHeight, innerWidth } = window;
-        if(!open) {
-            const wc = (innerWidth - size.width)/2;
-            const hc = (innerHeight - size.height)/2;
-            this.setState({
-                left: wc,
-                top: hc,
-                initLeft: wc,
-                initTop: hc,
-            })
-        }
+        // const { open, size } = this.props;
+        // console.log("update", open, size)
+        // const { innerHeight, innerWidth } = window;
+        // if(!open) {
+        //     const wc = (innerWidth - size.width)/2;
+        //     const hc = (innerHeight - size.height)/2;
+        //     this.setState({
+        //         left: wc,
+        //         top: hc,
+        //         initLeft: wc,
+        //         initTop: hc,
+        //     })
+        // }
     }
 
     updatePosition = (left, top) => {
@@ -98,7 +113,7 @@ class Modal extends Component {
             return null;
         }
         return (
-            <Portal open={open}>
+            <Portal open={open} afterOpen={this.afterOpen}>
                 <div>
                     <ModalMask {...{showMask}} />
                     <ModalWrap {...{left, top, width, height, close, closeOnDcumentClick}}>

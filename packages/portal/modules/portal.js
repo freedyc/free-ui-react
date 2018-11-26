@@ -13,6 +13,7 @@ class Portal extends Component {
 
     componentDidMount() {
         console.log("portal did Mount")
+        this.props.afterOpen && this.props.afterOpen();
         if (this.props.open) {
             this.renderPortal()
         }
