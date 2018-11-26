@@ -7,7 +7,7 @@ import ModalContentTest from './Components/ModalContentTest';
 import CheckboxGroup from './Components/Checkbox';
 import MultipleModal from './Components/MultipleModal';
 import ReactModal from './Components/ReactModal';
-
+import SemanticUiModal from './Components/SemanticUiModal';
 const IndexComponent = () => {
   return (
     <div>
@@ -16,6 +16,7 @@ const IndexComponent = () => {
       <ModalContentTest />
       <MultipleModal />
       <ReactModal />
+      <SemanticUiModal />
     </div>
   )
 }
