@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@dengyongchao/modal": "*",
+    "@dengyongchao/portal": "*",
     "classnames": "^2.2.6",
     "immutable": "^4.0.0-rc.12",
     "react": "^0.14.5",

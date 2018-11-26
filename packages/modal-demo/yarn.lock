@@ -91,6 +91,7 @@
 "@dengyongchao/portal@^0.2.15":
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/@dengyongchao/portal/-/portal-0.5.2.tgz#ac9318c551bfe64b73e3354106c8b13dc24744f6"
+  integrity sha512-Wxb+HIc3B94YHN8ZdPYv2oT0b0tk/nzUAZn4e9yM56sVdhKznIbQ3epza1yoV9KCs2IhiyPyjGmoiC/HrVG8qQ==
 
 abab@^1.0.3:
   version "1.0.4"

@@ -15,6 +15,7 @@ class Modal extends Component {
 
     constructor(props) {
         super(props);
+        console.log(props, "constructor");
         this.state = {
             left: 500,
             top: 40,
@@ -23,8 +24,19 @@ class Modal extends Component {
         }
     }
 
+    componentDidMount() {
+        console.log("Dig Mount", this.state, this.props)
+    }
+    componentWillMount() {
+        console.log("will Mount");
+    }
+    componentDidUpdate() {
+        console.log("did update")
+    }
     componentWillUpdate() {
+        
         const { open, size } = this.props;
+        console.log("update", open, size)
         const { innerHeight, innerWidth } = window;
         if(!open) {
             const wc = (innerWidth - size.width)/2;
@@ -82,6 +94,9 @@ class Modal extends Component {
             initLeft,
             initTop
         } = this.state;
+        if (!open) {
+            return null;
+        }
         return (
             <Portal open={open}>
                 <div>

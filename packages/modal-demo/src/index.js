@@ -5,6 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import ModalTest from './Components/ModalExample';
 import ModalContentTest from './Components/ModalContentTest';
 import CheckboxGroup from './Components/Checkbox';
+import MultipleModal from './Components/MultipleModal';
 
 const IndexComponent = () => {
   return (
@@ -12,6 +13,7 @@ const IndexComponent = () => {
       <ModalTest />
       <CheckboxGroup />
       <ModalContentTest />
+      <MultipleModal />
     </div>
   )
 }
