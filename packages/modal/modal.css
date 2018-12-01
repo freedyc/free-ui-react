@@ -18,7 +18,7 @@
 .ddi-modal-header {
   position: relative;
   border-bottom: 1px solid #c9c9c9;
-  background: linear-gradient(to bttom, #fff, whitesmoke);
+  background: linear-gradient(to bottom, #fff, whitesmoke);
   border-radius: 6px 6px 0 0;
   height: 50px; }
   .ddi-modal-header span.loading {
