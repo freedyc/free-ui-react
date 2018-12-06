@@ -1,11 +1,17 @@
 import { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import PropTypes from 'prop-types';
 
 class Portal extends Component {
 
     static defaultProps = {
         open: false,
+    }
+
+    static propTypes = {
+        open: PropTypes.bool,
+        children: PropTypes.element,
+        beforeOpen: PropTypes.func,
     }
 
     componentDidMount() {
@@ -15,7 +21,7 @@ class Portal extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        this.renderPortal()
+        this.renderPortal();
         if (prevProps.open && !this.props.open) {
             this.unmountPortal()
         }
@@ -26,7 +32,7 @@ class Portal extends Component {
     }
 
     renderPortal() {
-        if (!this.props.open) return
+        if (!this.props.open) return;
         this.mountPortal()
         this.portal = ReactDOM.unstable_renderSubtreeIntoContainer(
             this,
@@ -37,9 +43,10 @@ class Portal extends Component {
 
     mountPortal() {
         if (this.rootNode) return
+        this.props.beforeOpen && this.props.beforeOpen()
         const mountNode = document.body;
         this.rootNode = document.createElement('div');
-        this.rootNode.className = "";
+        // this.rootNode.className = "";
         mountNode.appendChild(this.rootNode);
 
     }
