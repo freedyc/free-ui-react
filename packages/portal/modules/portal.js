@@ -12,12 +12,11 @@ class Portal extends Component {
         open: PropTypes.bool,
         children: PropTypes.element,
         beforeOpen: PropTypes.func,
+        beforeClose: PropTypes.func,
     }
 
     componentDidMount() {
-        if (this.props.open) {
-            this.renderPortal()
-        }
+        this.renderPortal();
     }
 
     componentDidUpdate(prevProps) {
@@ -42,21 +41,32 @@ class Portal extends Component {
     }
 
     mountPortal() {
-        if (this.rootNode) return
+        if (this.rootNode) return;
         this.props.beforeOpen && this.props.beforeOpen()
         const mountNode = document.body;
         this.rootNode = document.createElement('div');
         // this.rootNode.className = "";
         mountNode.appendChild(this.rootNode);
-
     }
 
     unmountPortal() {
         if (!this.rootNode) return false;
+        if (!this.triggerBeforeClose()) return false;
         ReactDOM.unmountComponentAtNode(this.rootNode);
         this.rootNode.parentNode.removeChild(this.rootNode);
         this.rootNode = null;
         this.portal = null;
+    }
+
+    triggerBeforeClose() {
+        const { beforeClose } = this.props;
+        if (typeof beforeClose === 'function') {
+            const hasClose = beforeClose();
+            if (typeof hasClose === 'boolean' && hasClose === false) {
+                return false;
+            }
+        }
+        return true;
     }
 
     render() {

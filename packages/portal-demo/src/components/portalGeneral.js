@@ -13,12 +13,18 @@ class App extends Component {
   toggleOpen = () => {
     this.setState({ open: !this.state.open})
   }
-  beforeOpen() {
-    console.log("打开之前");
+  beforeOpen = () => {
+    console.log("before open");
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      this.setState({ count: this.state.count + 1 })
+    }, 3000);
     return false;
   };
-  afterOpen() {
-    console.log("打开之后")
+
+  afterClose = () => {
+    console.log("before close");
+    return this.state.count % 2 === 0;
   }
   render() {
     return (
@@ -26,7 +32,7 @@ class App extends Component {
         <button onClick={this.onClickButton}>点击</button>
         <button onClick={this.toggleOpen}>开关</button>
         { true ?
-          <Portal open={this.state.open} beforeOpen={this.beforeOpen} afterOpen={this.afterOpen}>
+          <Portal open={this.state.open} beforeOpen={this.beforeOpen} beforeClose={this.afterClose}>
             <div>
               {this.state.count}
               <h1>Hello Portal!</h1>
