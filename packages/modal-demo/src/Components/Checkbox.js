@@ -60,7 +60,7 @@ class CheckboxTest extends Component {
   }
 
   boxChange() {
-    this.setState({ value: this.state.value == "123" ? "456" : "123" })
+    this.setState({ value: this.state.value === "123" ? "456" : "123" })
   }
 
   render() {
