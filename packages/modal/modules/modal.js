@@ -84,6 +84,11 @@ class Modal extends Component {
             initLeft,
             initTop
         } = this.state;
+
+        if (!open) {
+            return null
+        }
+
         return (
             <Portal open={open}>
                 <div>
