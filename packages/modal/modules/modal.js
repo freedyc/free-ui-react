@@ -23,17 +23,19 @@ class Modal extends Component {
         }
     }
 
-    componentWillUpdate() {
+    componentDidUpdate(prevProps) {
         const { open, size } = this.props;
-        const { innerHeight, innerWidth } = window;
-        if(!open) {
-            const wc = (innerWidth - size.width)/2;
-            const hc = (innerHeight - size.height)/2;
+        if (!prevProps.open && open) {
+            const { innerHeight, innerWidth } = window;
+            const left = (innerWidth - size.width) / 2;
+            const top = (innerHeight - size.height) / 2;
+            const initLeft = left > 0 ? left : 0;
+            const initTop = top > 0 ? top : 0;
             this.setState({
-                left: wc,
-                top: hc,
-                initLeft: wc,
-                initTop: hc,
+                left: initLeft,
+                top: initTop,
+                initLeft: initLeft,
+                initTop: initTop,
             })
         }
     }

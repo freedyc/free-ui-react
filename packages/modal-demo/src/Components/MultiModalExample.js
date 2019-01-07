@@ -9,15 +9,9 @@ class ModalExample extends Component {
     openBlack: false,
   }
 
-  openWhite = () => {
+  open = (name) => {
     this.setState({
-      openWhite: true
-    })
-  }
-
-  openBlack =() => {
-    this.setState({
-      openBlack: true
+      [name]: true
     })
   }
 
@@ -30,36 +24,31 @@ class ModalExample extends Component {
   render() {
     const {
       openBlack,
-      // openWhite
+      openWhite
     } = this.state;
+    console.log("Redner");
     return (
       <div>
         <div style={{ marginTop: "30px" }}>
           <hr />
           <h1>多个Modal展示</h1>
-          {/* <button type="button" className="button button-3d button-primary button-rounded" onClick={this.openWhite}>阿白</button> */}
-          <button type="button" className="button button-3d button-primary button-rounded" onClick={this.openBlack}>阿黑</button>
+
+          <button type="button" className="button button-3d button-primary button-rounded" onClick={() => this.open("openBlack")}>阿黑</button>
           <Modal
             open={openBlack}
             close={() => this.close("openBlack")}
             title="阿黑"
           >
             <h1>大黑</h1>
+            <button type="button" className="button button-3d button-primary button-rounded" onClick={() => this.open("openWhite")}>阿白</button>
           </Modal>
           <Modal
-            open={openBlack}
-            close={() => this.close("openBlack")}
-            title="阿黑1"
-          >
-            <h1>大黑</h1>
-          </Modal>
-          {/* <Modal
             open={openWhite}
             close={() => this.close("openWhite")}
             title="阿白"
           >
             <h1>大白</h1>
-          </Modal> */}
+          </Modal>
         </div>
       </div>
     )
