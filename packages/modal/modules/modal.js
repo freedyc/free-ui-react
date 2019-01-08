@@ -76,6 +76,8 @@ class Modal extends Component {
             showHeader,
             closeOnEsc,
             closeOnDcumentClick,
+            beforeOpen,
+            beforeClose,
         } = this.props;
 
         const {
@@ -90,7 +92,7 @@ class Modal extends Component {
         }
 
         return (
-            <Portal open={open}>
+            <Portal open={open} beforeOpen={beforeOpen} beforeClose={beforeClose}>
                 <div>
                     <ModalMask {...{showMask}} />
                     <ModalWrap {...{left, top, width, height, close, closeOnDcumentClick}}>

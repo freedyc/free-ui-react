@@ -20,6 +20,15 @@ class ModalExample extends Component {
       [name]: false,
     })
   }
+  beforeOpen = () => {
+    console.log('beforeOpen');
+  }
+
+  bc = () => {
+    console.log('beforeClose');
+    this.setState({openBlack: true});
+    return true;
+  }
 
   render() {
     const {
@@ -38,6 +47,8 @@ class ModalExample extends Component {
             open={openBlack}
             close={() => this.close("openBlack")}
             title="阿黑"
+            beforeClose={this.bc}
+            beforeOpen={this.beforeOpen}
           >
             <h1>大黑</h1>
             <button type="button" className="button button-3d button-primary button-rounded" onClick={() => this.open("openWhite")}>阿白</button>
