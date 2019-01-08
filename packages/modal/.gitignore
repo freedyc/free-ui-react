@@ -3,6 +3,7 @@ umd
 /*.js
 /*.css
 /*.css.map
+/*.min.css
 es
 !rollup.config.js
 .sass-cache

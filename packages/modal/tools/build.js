@@ -1,8 +1,8 @@
 const fs = require('fs')
+const path = require('path');
 const execSync = require('child_process').execSync
 const prettyBytes = require('pretty-bytes')
 const gzipSize = require('gzip-size')
-
 const filename = 'modal';
 
 const exec = (command, extraEnv) =>
@@ -42,3 +42,9 @@ const size = gzipSize.sync(
 )
 
 console.log('\ngzipped, the UMD build is %s', prettyBytes(size))
+
+console.log('\nBulding modal.css ...')
+
+execSync(`node ${path.join(__dirname, '/sass.js')}`);
+
+console.log('\ndone')

@@ -158,9 +158,9 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@dengyongchao/portal@^0.2.15":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@dengyongchao/portal/-/portal-0.5.2.tgz#ac9318c551bfe64b73e3354106c8b13dc24744f6"
+"@dengyongchao/portal@*":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@dengyongchao/portal/-/portal-0.6.0.tgz#cf7ccdd926faa01cfc19962633430ba416732f83"
 
 "@types/estree@0.0.38":
   version "0.0.38"
