@@ -6,6 +6,7 @@ import ModalTest from './Components/ModalExample';
 import ModalContentTest from './Components/ModalContentTest';
 import CheckboxGroup from './Components/Checkbox';
 import MultiModalExample from './Components/MultiModalExample';
+import ModalScroll from './Components/ModalScroll';
 
 const IndexComponent = () => {
   return (
@@ -14,6 +15,7 @@ const IndexComponent = () => {
       <CheckboxGroup />
       <ModalContentTest />
       <MultiModalExample />
+      <ModalScroll />
     </div>
   )
 }
