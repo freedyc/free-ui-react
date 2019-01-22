@@ -1,6 +1,6 @@
 {
   "name": "@dengyongchao/modal",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "React UI Modal",
   "repository": "",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "umd",
     "modal.scss",
     "modal.css",
-    "headre.js"
+    "header.js"
   ],
   "main": "index.js",
   "module": "es/index.js",
