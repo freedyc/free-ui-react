@@ -484,6 +484,15 @@ punycode长度不超过63
         expect isMAC('3-2f-c-17-06-b')
           .toBeTruthy()
 
+        expect isMAC('1111-1111-1111')
+          .toBeTruthy()
+
+        expect isMAC('1111:1111:1111')
+          .toBeTruthy()
+
+        expect isMAC('123:456:7890')
+          .toBeTruthy()
+
         expect isMAC('3:2f:c-17:06:b')
           .toBeFalsy()
 

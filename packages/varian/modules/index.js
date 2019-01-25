@@ -220,7 +220,8 @@ export function isDomainName(str) {
 
 export function isMAC(mac) {
   const reg = /^[0-9a-f]{1,2}([:-])[0-9a-f]{1,2}(\1[0-9a-f]{1,2}){4}$/i;
-  return reg.test(mac);
+  const regl = /^[0-9a-f]{1,4}([:-])[0-9a-f]{1,4}\1[0-9a-f]{1,4}$/i;
+  return reg.test(mac) || regl.test(mac);
 }
 
 export function isDUID(duid) {
