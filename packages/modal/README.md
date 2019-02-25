@@ -25,3 +25,7 @@ closeOnEsc          boolean         是否支持Esc关闭  默认：true
 footer              any             footer内容
 
 ```
+0.3.4 Log
+
+修复HeaderLoading状态变化后没有更新组件
+
