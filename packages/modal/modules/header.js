@@ -31,13 +31,6 @@ class Header extends Component {
         loading: false
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        // console.log("%c header update", "color: orange", nextState, nextProps)
-        if(nextProps.initLeft === this.props.initLeft && nextProps.initTop === this.props.initTop) return false;
-        // console.log("%c update Component", "color: green");
-        return true;
-    }
-
     componentWillUnmount() {
         document.removeEventListener('mousemove', this.move, false);
         document.removeEventListener('mouseup', this.up, false);
